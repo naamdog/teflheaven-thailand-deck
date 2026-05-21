@@ -43,35 +43,70 @@ tailwind.config = {
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
-  html { scroll-behavior: smooth; scroll-snap-type: y mandatory; background: #ffffff; }
-  body { font-family: 'DM Sans', system-ui, sans-serif; color: #1a1a2e; background: #ffffff; -webkit-font-smoothing: antialiased; }
-
-  .slide {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    width: 100vw;
-    position: relative;
+  /* =====================================================================
+     CLICK-THROUGH SLIDE DECK
+     Model: pantheonmarketing.github.io/workshop-prizsm — one slide
+     visible at a time, prev/next arrows + keyboard, slide counter
+     bottom-right.
+     ===================================================================== */
+  html { background: #ffffff; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: #1a1a2e;
+    background: #ffffff;
+    margin: 0;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    user-select: text;
   }
+
+  /* Deck container — locks the 16:9 stage to viewport */
+  .deck {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Each slide stacked, only .active is visible */
+  .slide {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide.active { opacity: 1; visibility: visible; z-index: 1; }
 
   /* Typography */
   .display { font-family: 'Playfair Display', Georgia, serif; line-height: 1.02; letter-spacing: -0.015em; }
   .display-italic { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; }
   .mono { font-family: 'DM Mono', ui-monospace, monospace; }
 
-  /* Section eyebrow — tracked uppercase mono in amber */
-  .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #e8a020; }
-  .eyebrow-light { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #e8a020; }
+  /* Eyebrow label */
+  .eyebrow, .eyebrow-light {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #e8a020;
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .ruleline { display: inline-block; width: 44px; height: 1px; background: #e8a020; }
 
-  /* Amber hairline (always paired with eyebrow) */
-  .ruleline { display: inline-block; width: 44px; height: 1px; background: #e8a020; vertical-align: middle; margin-right: 14px; }
-
-  /* Soft card */
+  /* Cards */
   .card { background: #f5f5f5; border-radius: 14px; }
   .card-dark { background: #1a1a2e; border-radius: 14px; color: #ffffff; }
+  .card-amber-top { border-top: 3px solid #e8a020; }
 
-  /* Image placeholder — used until the user drops in real images */
+  /* IMAGE SLOTS — placeholder pattern shows until file exists */
   .img-slot {
     position: relative;
     background: #f5f5f5;
@@ -85,93 +120,108 @@ tailwind.config = {
     background-repeat: repeat;
     overflow: hidden;
     border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .img-slot::before {
     content: attr(data-label);
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.85);
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.88);
     color: #1a1a2e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 28px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 24px;
     text-align: center;
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.16em;
+    font-size: 10px; letter-spacing: 0.16em;
     text-transform: uppercase;
     white-space: pre-line;
-    backdrop-filter: blur(2px);
   }
-  /* When user drops in real image, set background-image on .img-slot inline OR add data-img */
-  .img-slot[style*="background-image"]::before,
-  .img-slot[data-img]::before { display: none; }
+  .img-slot[style*="background-image: url"][data-img]::before { display: none; }
+  .img-real { background-size: cover; background-position: center; background-repeat: no-repeat; }
 
-  /* Photo card with real image — for when real img exists */
-  .img-real {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+  /* CHROME — persistent UI ====================================== */
 
-  /* Fixed navigation dots */
-  .dot-nav {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .dot {
-    width: 6px; height: 6px; border-radius: 999px;
-    background: rgba(26,26,46,0.18);
-    transition: all .25s ease;
-    cursor: pointer;
-    display: block;
-  }
-  .dot:hover { background: rgba(26,26,46,0.55); transform: scale(1.4); }
-  .dot.active { background: #e8a020; width: 24px; border-radius: 4px; }
-  .dot.on-dark { background: rgba(255,255,255,0.22); }
-  .dot.on-dark.active { background: #e8a020; }
-
-  /* Top progress meta */
-  .top-meta {
-    position: fixed; top: 18px; right: 20px; z-index: 50;
+  /* Top-left brand mark */
+  .brand-mark {
+    position: fixed; top: 22px; left: 28px; z-index: 100;
+    display: flex; align-items: center; gap: 10px;
     font-family: 'DM Mono', monospace;
     font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(26,26,46,0.6);
+    color: rgba(26,26,46,0.7);
+    text-decoration: none;
+    transition: color .2s;
   }
-  .top-meta.on-dark { color: rgba(255,255,255,0.7); }
-  .top-meta a { color: #e8a020; text-decoration: none; }
+  .brand-mark::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px; background: #e8a020;
+    border-radius: 1px;
+  }
+  .brand-mark.on-dark { color: rgba(255,255,255,0.8); }
 
-  /* Bottom edge — slide footer mark */
-  .slide-footer {
-    position: absolute; bottom: 18px; left: 32px; right: 32px;
-    display: flex; justify-content: space-between;
+  /* Top progress bar — 2px amber that fills as you advance */
+  .progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 2px;
+    background: rgba(26,26,46,0.08);
+    z-index: 99;
+  }
+  .progress::after {
+    content: ''; display: block; height: 100%;
+    background: #e8a020;
+    width: var(--p, 0%);
+    transition: width .35s ease;
+  }
+
+  /* Bottom-right navigator: ← 05 / 44 → */
+  .navctrl {
+    position: fixed; bottom: 22px; right: 28px; z-index: 100;
+    display: flex; align-items: center; gap: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; letter-spacing: 0.12em;
+    color: rgba(26,26,46,0.85);
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(26,26,46,0.10);
+    border-radius: 6px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+  }
+  .navctrl button {
+    background: none; border: 0; padding: 9px 14px;
+    color: rgba(26,26,46,0.85);
+    cursor: pointer;
+    font-family: inherit; font-size: 14px;
+    line-height: 1;
+    transition: background .15s, color .15s;
+  }
+  .navctrl button:hover { background: #f5f5f5; color: #e8a020; }
+  .navctrl button:disabled { opacity: 0.3; cursor: default; }
+  .navctrl .counter {
+    padding: 0 12px; min-width: 78px; text-align: center;
+    border-left: 1px solid rgba(26,26,46,0.08);
+    border-right: 1px solid rgba(26,26,46,0.08);
+  }
+  .navctrl.on-dark {
+    background: rgba(26,26,46,0.65);
+    border-color: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.85);
+  }
+  .navctrl.on-dark button { color: rgba(255,255,255,0.85); }
+  .navctrl.on-dark button:hover { background: rgba(255,255,255,0.08); color: #e8a020; }
+  .navctrl.on-dark .counter { border-color: rgba(255,255,255,0.15); }
+
+  /* Per-slide section + slide-number label, bottom-left */
+  .slide-label {
+    position: absolute; bottom: 22px; left: 28px;
     font-family: 'DM Mono', monospace;
     font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
     color: rgba(26,26,46,0.45);
     pointer-events: none;
+    z-index: 5;
   }
-  .slide-footer.on-dark { color: rgba(255,255,255,0.55); }
+  .slide-label.on-dark { color: rgba(255,255,255,0.55); }
 
-  /* Section divider — large chapter pages */
-  .chapter {
-    background: #ffffff;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .chapter-dark {
-    background: #1a1a2e; color: #ffffff;
-    display: flex; align-items: center; justify-content: center;
-  }
+  /* Chapter pages */
+  .chapter, .chapter-dark { display: flex; align-items: center; justify-content: center; }
+  .chapter-dark { background: #1a1a2e; color: #ffffff; }
   .big-num {
     font-family: 'Playfair Display', serif;
     font-weight: 800;
@@ -179,72 +229,101 @@ tailwind.config = {
     letter-spacing: -0.02em;
   }
 
-  /* CTA button */
+  /* CTAs — primary amber button */
   .cta {
     display: inline-flex; align-items: center; gap: 10px;
     background: #e8a020; color: #ffffff;
-    padding: 14px 32px; border-radius: 8px;
+    padding: 13px 26px; border-radius: 6px;
     font-family: 'DM Sans', sans-serif;
-    font-weight: 600; font-size: 15px;
+    font-weight: 600; font-size: 14px;
     text-decoration: none;
     transition: background .2s ease, transform .15s ease;
   }
   .cta:hover { background: #d4911a; transform: translateY(-1px); }
-  .cta svg { width: 18px; height: 18px; }
+  .cta svg { width: 16px; height: 16px; }
+  .cta-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: #1a1a2e;
+    border: 1px solid rgba(26,26,46,0.2);
+    padding: 12px 24px; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500; font-size: 14px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .cta-secondary:hover { border-color: #1a1a2e; }
+  .cta-secondary.on-dark { color: #ffffff; border-color: rgba(255,255,255,0.4); }
+  .cta-secondary.on-dark:hover { border-color: #ffffff; background: rgba(255,255,255,0.05); }
 
-  /* Quote glyph */
   .glyph-quote {
     font-family: 'Playfair Display', serif;
     color: #e8a020;
-    font-size: 88px;
-    line-height: 0.6;
+    font-size: 64px; line-height: 0.6;
   }
 
-  /* Scroll hint on cover */
-  .scroll-hint {
-    position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
-    font-family: 'DM Mono', monospace; font-size: 10px;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    animation: scroll-bounce 2.6s ease-in-out infinite;
+  /* Emoji bullet — small, paired with content */
+  .e-bullet { display: inline-block; width: 22px; margin-right: 6px; }
+
+  /* ✓ / ✗ comparison treatment */
+  .yes::before { content: '✓'; color: #e8a020; font-weight: 700; margin-right: 8px; }
+  .no::before  { content: '✗'; color: rgba(26,26,46,0.4); font-weight: 700; margin-right: 8px; }
+
+  /* Slide content scroll if too tall */
+  .slide-scroll { overflow-y: auto; }
+  .slide-scroll::-webkit-scrollbar { width: 8px; }
+  .slide-scroll::-webkit-scrollbar-thumb { background: rgba(26,26,46,0.15); border-radius: 4px; }
+
+  /* Mobile — full vertical scroll fallback */
+  @media (max-width: 768px) {
+    body { overflow: auto; }
+    .deck { position: static; height: auto; display: block; background: #fff; }
+    .slide {
+      position: relative;
+      opacity: 1; visibility: visible;
+      min-height: 100vh;
+      border-bottom: 1px solid rgba(26,26,46,0.08);
+      padding: 80px 20px 100px !important;
+    }
+    .progress { display: none; }
+    .navctrl { bottom: 14px; right: 14px; }
+    .brand-mark { top: 14px; left: 16px; }
+    .slide-label { bottom: 80px; left: 20px; }
   }
-  @keyframes scroll-bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
-  .scroll-hint .arrow { width: 1px; height: 28px; background: rgba(255,255,255,0.5); }
 
-  /* Photo treatment - inset rounded full-bleed */
-  .photo-inset { border-radius: 16px; overflow: hidden; }
-
-  /* Mobile: drop scroll-snap */
-  @media (max-width: 900px) {
-    html { scroll-snap-type: none; }
-    .slide { min-height: auto; padding: 80px 20px !important; }
-    .dot-nav { display: none; }
-    .top-meta { top: 12px; right: 14px; }
-    .slide-footer { display: none; }
-  }
-
-  /* Print: each slide one page */
+  /* PRINT — every slide on its own A4 landscape page */
   @page { size: 297mm 167mm; margin: 0; }
   @media print {
-    .dot-nav, .top-meta, .scroll-hint { display: none !important; }
-    html, body { scroll-snap-type: none; }
-    .slide { page-break-after: always; min-height: 100vh; }
+    body { overflow: visible !important; }
+    .deck { position: static; height: auto; display: block; }
+    .slide {
+      position: relative !important;
+      opacity: 1 !important; visibility: visible !important;
+      min-height: 100vh;
+      page-break-after: always;
+    }
+    .progress, .navctrl, .brand-mark { display: none !important; }
+    * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   }
+
+  /* Old leftover classes to keep existing slide markup working */
+  .slide-footer { display: none; }  /* old footer mark — now using .slide-label */
+  .top-meta { display: none; }      /* old top counter — replaced by .navctrl */
+  .dot-nav { display: none; }       /* old dot nav — replaced by counter */
+  .scroll-hint { display: none; }   /* old scroll hint — click-through doesn't need it */
 </style>
 </head>
 <body>
 
-<!-- TOP META -->
-<div class="top-meta" id="topMeta">
-  <span class="opacity-60">TEFL HEAVEN</span>
-  <span class="ml-4" id="slideCounter">01 / 44</span>
+<!-- CHROME: brand mark, progress, navctrl -->
+<a href="#s01" class="brand-mark" id="brandMark" aria-label="Back to cover">TEFL Heaven  ·  Teach Thailand</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="navctrl" id="navctrl" role="navigation" aria-label="Slide navigation">
+  <button id="prevBtn" title="Previous slide (←)" aria-label="Previous">←</button>
+  <span class="counter" id="slideCounter">01 / 44</span>
+  <button id="nextBtn" title="Next slide (→ or space)" aria-label="Next">→</button>
 </div>
 
-<!-- DOT NAV -->
-<nav class="dot-nav" id="dotNav" aria-label="Slide navigation"></nav>
-
-<main>
+<main class="deck" id="deck">
 
 <!-- ================================================================================ -->
 <!-- 1. COVER                                                                          -->
@@ -298,7 +377,7 @@ Full-bleed Bangkok at dusk, Wat Arun silhouetted in warm amber sky"
     </p>
     <p class="mt-4 display-italic text-ink/55 text-xl">Take your time. This is a decision worth a few minutes of your life.</p>
   </div>
-  <div class="slide-footer"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>02 / 44</span></div>
+  <div class="slide-label"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>02 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -326,7 +405,7 @@ Portrait of Mike Maitland — warm, candid, founder feel"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>03 / 44</span></div>
+  <div class="slide-label"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>03 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -391,7 +470,7 @@ Thai night market lit by paper lanterns — warm, sensory, alive"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part One  ·  Why Thailand</span><span>05 / 44</span></div>
+  <div class="slide-label"><span>Part One  ·  Why Thailand</span><span>05 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -453,7 +532,7 @@ Bangkok rooftop bar at dusk" style="background-image: url('images/06c-rooftop.jp
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part One  ·  Why Thailand</span><span>06 / 44</span></div>
+  <div class="slide-label"><span>Part One  ·  Why Thailand</span><span>06 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -506,7 +585,7 @@ Bangkok rooftop bar at dusk" style="background-image: url('images/06c-rooftop.jp
 
     <p class="mono text-[10px] uppercase tracking-widest text-ink/45 mt-10">120 hours of in-class training  ·  Accredited by TQUK &amp; Trinity College London-equivalent awarding bodies</p>
   </div>
-  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>08 / 44</span></div>
+  <div class="slide-label"><span>Part Two  ·  What's Included</span><span>08 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -536,7 +615,7 @@ Cohort at a Thai temple during orientation week"
       </ul>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>09 / 44</span></div>
+  <div class="slide-label"><span>Part Two  ·  What's Included</span><span>09 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -567,7 +646,7 @@ A trainee teacher mid-lesson during TESOL course"
            style="background-image: url('images/10-tesol-classroom.jpg'); border-radius: 0;"></div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>10 / 44</span></div>
+  <div class="slide-label"><span>Part Two  ·  What's Included</span><span>10 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -601,7 +680,7 @@ A trainee teacher mid-lesson during TESOL course"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>11 / 44</span></div>
+  <div class="slide-label"><span>Part Two  ·  What's Included</span><span>11 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -708,7 +787,7 @@ A trainee teacher mid-lesson during TESOL course"
       <p class="display-italic text-amber mt-8 text-xl">Bring ~£950 startup. Earn £680–£1,135 / month. Save the rest.</p>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>15 / 44</span></div>
+  <div class="slide-label"><span>Part Two  ·  What's Included</span><span>15 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -753,7 +832,7 @@ Hand-drawn line-art map of Thailand with amber city dots"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>17 / 44</span></div>
+  <div class="slide-label"><span>Part Three  ·  Your Job &amp; Life</span><span>17 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -811,7 +890,7 @@ Private language-school classroom"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>18 / 44</span></div>
+  <div class="slide-label"><span>Part Three  ·  Your Job &amp; Life</span><span>18 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -849,7 +928,7 @@ Private language-school classroom"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>19 / 44</span></div>
+  <div class="slide-label"><span>Part Three  ·  Your Job &amp; Life</span><span>19 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -902,7 +981,7 @@ Modern Bangkok apartment with city view"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>20 / 44</span></div>
+  <div class="slide-label"><span>Part Three  ·  Your Job &amp; Life</span><span>20 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -952,7 +1031,7 @@ Modern Bangkok apartment with city view"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>21 / 44</span></div>
+  <div class="slide-label"><span>Part Three  ·  Your Job &amp; Life</span><span>21 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1027,7 +1106,7 @@ Modern Bangkok apartment with city view"
       </li>
     </ul>
   </div>
-  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>24 / 44</span></div>
+  <div class="slide-label"><span>Part Four  ·  Are You Eligible?</span><span>24 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1068,7 +1147,7 @@ Modern Bangkok apartment with city view"
 
     <p class="display-italic text-amber mt-10 text-xl">If anything is a "maybe", just ask. We've seen it before.</p>
   </div>
-  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>25 / 44</span></div>
+  <div class="slide-label"><span>Part Four  ·  Are You Eligible?</span><span>25 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1089,7 +1168,7 @@ Modern Bangkok apartment with city view"
       <div class="card p-6"><h3 class="display text-ink text-base mb-2">"What about my partner / pets?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">Both are possible case-by-case. You cover all costs and logistics for them — programme support stays focused on you. Most couples come together and find adjacent placements.</p></div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>26 / 44</span></div>
+  <div class="slide-label"><span>Part Four  ·  Are You Eligible?</span><span>26 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1108,7 +1187,7 @@ Modern Bangkok apartment with city view"
 
     <p class="display-italic text-amber mt-10 max-w-2xl text-xl">It is for people who suspect there's a different life available, and who are willing to take twelve months to find out.</p>
   </div>
-  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>27 / 44</span></div>
+  <div class="slide-label"><span>Part Four  ·  Are You Eligible?</span><span>27 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1149,7 +1228,7 @@ Modern Bangkok apartment with city view"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>29 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>29 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1184,7 +1263,7 @@ Modern Bangkok apartment with city view"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>30 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>30 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1225,7 +1304,7 @@ Modern Bangkok apartment with city view"
 
     <p class="mono text-[10px] uppercase tracking-widest text-ink/45 mt-10 text-center">150+ filmed alumni stories at teflheaven.com &amp; YouTube @teflheavenHQ</p>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>31 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>31 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1269,7 +1348,7 @@ Modern Bangkok apartment with city view"
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>32 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>32 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1309,7 +1388,7 @@ Modern Bangkok apartment with city view"
       <div class="card p-4 text-[13px] text-ink/65">You're on your own once you've paid</div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>33 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>33 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1334,7 +1413,7 @@ Modern Bangkok apartment with city view"
       <div class="card-dark p-4"><div class="display text-amber text-lg">+ more</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">26 country guides on our site</div></div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>34 / 44</span></div>
+  <div class="slide-label"><span>Part Five  ·  Why TEFL Heaven</span><span>34 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1382,7 +1461,7 @@ Modern Bangkok apartment with city view"
 
     <p class="display-italic text-ink/55 text-[14px] mt-8">Numbers are realistic averages — every teacher's situation is different. Ask us and we'll run your numbers honestly.</p>
   </div>
-  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>36 / 44</span></div>
+  <div class="slide-label"><span>Part Six  ·  The Numbers</span><span>36 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1457,7 +1536,7 @@ Modern Bangkok apartment with city view"
       </a>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>38 / 44</span></div>
+  <div class="slide-label"><span>Part Six  ·  The Numbers</span><span>38 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1483,7 +1562,7 @@ Modern Bangkok apartment with city view"
 
     <p class="text-ink/55 text-[14px] mt-10">Cohorts are held in arrival order. The earlier you apply, the more flexibility you have on intake and placement preferences.</p>
   </div>
-  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>39 / 44</span></div>
+  <div class="slide-label"><span>Part Six  ·  The Numbers</span><span>39 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1520,7 +1599,7 @@ Modern Bangkok apartment with city view"
       <div class="border-t-2 border-amber pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 10</div><h4 class="display text-amber text-base mb-1">Lifetime support</h4><p class="text-[12px] text-ink/55">Years on, we've still got your back.</p></div>
     </div>
   </div>
-  <div class="slide-footer"><span>Part Seven  ·  Your Next Step</span><span>41 / 44</span></div>
+  <div class="slide-label"><span>Part Seven  ·  Your Next Step</span><span>41 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1542,7 +1621,7 @@ Modern Bangkok apartment with city view"
 
     <p class="display-italic text-amber mt-10 text-xl">If you wait another ninety days, you'll be in exactly the same place you are right now.</p>
   </div>
-  <div class="slide-footer"><span>Part Seven  ·  Your Next Step</span><span>42 / 44</span></div>
+  <div class="slide-label"><span>Part Seven  ·  Your Next Step</span><span>42 / 44</span></div>
 </section>
 
 <!-- ================================================================================ -->
@@ -1622,56 +1701,108 @@ Tropical Thai sunset on Koh Samui, calm sea, palm fronds"
 </main>
 
 <script>
-// Build dot nav + counter from document order
+/* =====================================================================
+   CLICK-THROUGH SLIDE DECK
+   ===================================================================== */
 (function(){
   const slides = Array.from(document.querySelectorAll('.slide'));
-  const nav = document.getElementById('dotNav');
-  const counter = document.getElementById('slideCounter');
-  const meta = document.getElementById('topMeta');
   const total = slides.length;
+  const counter = document.getElementById('slideCounter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const progress = document.getElementById('progress');
+  const navctrl = document.getElementById('navctrl');
+  const brandMark = document.getElementById('brandMark');
 
-  slides.forEach((s, i) => {
-    s.dataset.order = i + 1;
-    const a = document.createElement('a');
-    a.href = '#' + s.id;
-    a.className = 'dot';
-    a.dataset.i = i + 1;
-    a.title = s.dataset.title || ('Slide ' + (i+1));
-    nav.appendChild(a);
+  // Tag each slide with its order
+  slides.forEach((s, i) => s.dataset.order = i + 1);
+
+  let current = 0;
+
+  function go(idx, push=true) {
+    if (idx < 0) idx = 0;
+    if (idx >= total) idx = total - 1;
+    current = idx;
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    const slide = slides[idx];
+    counter.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    progress.style.setProperty('--p', ((idx+1)/total * 100) + '%');
+
+    // Adapt chrome theme to slide
+    const dark = slide.dataset.theme === 'dark';
+    navctrl.classList.toggle('on-dark', dark);
+    brandMark.classList.toggle('on-dark', dark);
+
+    prevBtn.disabled = (idx === 0);
+    nextBtn.disabled = (idx === total - 1);
+
+    if (push && slide.id) {
+      history.replaceState(null, '', '#' + slide.id);
+    }
+
+    // Reset scroll position inside the slide
+    slide.scrollTop = 0;
+  }
+
+  function next() { go(current + 1); }
+  function prev() { go(current - 1); }
+
+  // Buttons
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // Keyboard
+  document.addEventListener('keydown', (ev) => {
+    if (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA') return;
+    if (ev.key === 'ArrowRight' || ev.key === 'PageDown' || ev.key === ' ' || ev.key === 'ArrowDown') {
+      ev.preventDefault(); next();
+    } else if (ev.key === 'ArrowLeft' || ev.key === 'PageUp' || ev.key === 'ArrowUp') {
+      ev.preventDefault(); prev();
+    } else if (ev.key === 'Home') {
+      ev.preventDefault(); go(0);
+    } else if (ev.key === 'End') {
+      ev.preventDefault(); go(total - 1);
+    } else if (/^[0-9]$/.test(ev.key)) {
+      // Quick-jump 0–9 jumps to ~ that decile
+      const target = Math.floor((parseInt(ev.key) / 10) * total);
+      go(target);
+    }
   });
 
-  const dots = document.querySelectorAll('.dot');
+  // Touch — swipe left/right
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(dx) > 60) (dx < 0 ? next() : prev());
+  }, {passive: true});
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting && e.intersectionRatio > 0.5) {
-        const idx = parseInt(e.target.dataset.order);
-        dots.forEach(d => d.classList.toggle('active', parseInt(d.dataset.i) === idx));
-        counter.textContent = String(idx).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
-        const dark = e.target.dataset.theme === 'dark';
-        dots.forEach(d => d.classList.toggle('on-dark', dark));
-        meta.classList.toggle('on-dark', dark);
-      }
-    });
-  }, { threshold: [0.5, 0.6] });
-  slides.forEach(s => obs.observe(s));
+  // Hash deep-linking
+  function indexFromHash() {
+    if (!location.hash) return 0;
+    const id = location.hash.replace('#','');
+    const found = slides.findIndex(s => s.id === id);
+    return found >= 0 ? found : 0;
+  }
+  go(indexFromHash(), false);
+  window.addEventListener('hashchange', () => go(indexFromHash(), false));
 
-  // Keyboard navigation
-  document.addEventListener('keydown', (ev) => {
-    const cur = document.querySelector('.dot.active');
-    if (!cur) return;
-    const i = parseInt(cur.dataset.i);
-    if (ev.key === 'ArrowDown' || ev.key === 'PageDown' || ev.key === ' ' || ev.key === 'ArrowRight') {
-      ev.preventDefault();
-      if (i < total) document.getElementById('s' + String(i+1).padStart(2,'0')).scrollIntoView({behavior:'smooth'});
-    } else if (ev.key === 'ArrowUp' || ev.key === 'PageUp' || ev.key === 'ArrowLeft') {
-      ev.preventDefault();
-      if (i > 1) document.getElementById('s' + String(i-1).padStart(2,'0')).scrollIntoView({behavior:'smooth'});
-    }
+  // Brand-mark click goes to cover
+  brandMark.addEventListener('click', (ev) => {
+    ev.preventDefault(); go(0);
+  });
+
+  // Anchor clicks inside the deck → jump
+  document.body.addEventListener('click', (ev) => {
+    const a = ev.target.closest('a[href^="#s"]');
+    if (!a) return;
+    const id = a.getAttribute('href').replace('#','');
+    const found = slides.findIndex(s => s.id === id);
+    if (found >= 0) { ev.preventDefault(); go(found); }
   });
 })();
 
-// Hide placeholder pattern if the image actually loaded
+/* Hide placeholder pattern if the image actually loaded */
 (function(){
   document.querySelectorAll('.img-slot[style*="background-image"]').forEach(el => {
     const m = el.style.backgroundImage.match(/url\((['"]?)(.+?)\1\)/);
