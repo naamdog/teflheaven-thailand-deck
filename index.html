@@ -208,15 +208,21 @@ tailwind.config = {
   .navctrl.on-dark button:hover { background: rgba(255,255,255,0.08); color: #e8a020; }
   .navctrl.on-dark .counter { border-color: rgba(255,255,255,0.15); }
 
-  /* Per-slide section + slide-number label, bottom-left */
+  /* Per-slide section label, bottom-left.
+     Old markup had two <span>s (section + page-number) styled as
+     flex space-between. Page number is now redundant (counter shows
+     it bottom-right), so we hide the 2nd span. */
   .slide-label {
     position: absolute; bottom: 22px; left: 28px;
+    max-width: 60%;
     font-family: 'DM Mono', monospace;
     font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
     color: rgba(26,26,46,0.45);
     pointer-events: none;
     z-index: 5;
+    line-height: 1.2;
   }
+  .slide-label > span:nth-child(2) { display: none; }
   .slide-label.on-dark { color: rgba(255,255,255,0.55); }
 
   /* Chapter pages */
