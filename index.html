@@ -1,0 +1,1689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teach Thailand — TEFL Heaven Programme Brochure 2026 / 2027</title>
+<meta name="description" content="Teach English in Thailand with TEFL Heaven. Guaranteed paid placement, Trinity-tier TESOL, 19 years in-country. The complete programme brochure." />
+<meta property="og:title" content="Teach Thailand — TEFL Heaven" />
+<meta property="og:description" content="A real paid job. Real time off. Real life. The complete Teach Thailand programme brochure." />
+<meta property="og:type" content="website" />
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        mono: ['"DM Mono"', 'ui-monospace', 'monospace'],
+      },
+      colors: {
+        // TEFL Heaven brand — sampled from teflheaven.com CSS
+        ink:    '#1a1a2e',  // --brand-dark (the "blue" text color)
+        navy:   '#1a1a2e',
+        'navy-deep': '#12121f',
+        amber:  '#e8a020',  // --brand-accent
+        'amber-hover': '#d4911a',
+        paper:  '#ffffff',
+        soft:   '#f5f5f5',
+        rule:   'rgba(26,26,46,0.10)',
+        muted:  'rgba(26,26,46,0.55)',
+      },
+    },
+  },
+};
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  html { scroll-behavior: smooth; scroll-snap-type: y mandatory; background: #ffffff; }
+  body { font-family: 'DM Sans', system-ui, sans-serif; color: #1a1a2e; background: #ffffff; -webkit-font-smoothing: antialiased; }
+
+  .slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Typography */
+  .display { font-family: 'Playfair Display', Georgia, serif; line-height: 1.02; letter-spacing: -0.015em; }
+  .display-italic { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; }
+  .mono { font-family: 'DM Mono', ui-monospace, monospace; }
+
+  /* Section eyebrow — tracked uppercase mono in amber */
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #e8a020; }
+  .eyebrow-light { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: #e8a020; }
+
+  /* Amber hairline (always paired with eyebrow) */
+  .ruleline { display: inline-block; width: 44px; height: 1px; background: #e8a020; vertical-align: middle; margin-right: 14px; }
+
+  /* Soft card */
+  .card { background: #f5f5f5; border-radius: 14px; }
+  .card-dark { background: #1a1a2e; border-radius: 14px; color: #ffffff; }
+
+  /* Image placeholder — used until the user drops in real images */
+  .img-slot {
+    position: relative;
+    background: #f5f5f5;
+    background-image:
+      linear-gradient(135deg, #ededed 25%, transparent 25%),
+      linear-gradient(225deg, #ededed 25%, transparent 25%),
+      linear-gradient(45deg, #ededed 25%, transparent 25%),
+      linear-gradient(315deg, #ededed 25%, transparent 25%);
+    background-position: 14px 0, 14px 0, 0 0, 0 0;
+    background-size: 28px 28px;
+    background-repeat: repeat;
+    overflow: hidden;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-slot::before {
+    content: attr(data-label);
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.85);
+    color: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: pre-line;
+    backdrop-filter: blur(2px);
+  }
+  /* When user drops in real image, set background-image on .img-slot inline OR add data-img */
+  .img-slot[style*="background-image"]::before,
+  .img-slot[data-img]::before { display: none; }
+
+  /* Photo card with real image — for when real img exists */
+  .img-real {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Fixed navigation dots */
+  .dot-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: rgba(26,26,46,0.18);
+    transition: all .25s ease;
+    cursor: pointer;
+    display: block;
+  }
+  .dot:hover { background: rgba(26,26,46,0.55); transform: scale(1.4); }
+  .dot.active { background: #e8a020; width: 24px; border-radius: 4px; }
+  .dot.on-dark { background: rgba(255,255,255,0.22); }
+  .dot.on-dark.active { background: #e8a020; }
+
+  /* Top progress meta */
+  .top-meta {
+    position: fixed; top: 18px; right: 20px; z-index: 50;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(26,26,46,0.6);
+  }
+  .top-meta.on-dark { color: rgba(255,255,255,0.7); }
+  .top-meta a { color: #e8a020; text-decoration: none; }
+
+  /* Bottom edge — slide footer mark */
+  .slide-footer {
+    position: absolute; bottom: 18px; left: 32px; right: 32px;
+    display: flex; justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(26,26,46,0.45);
+    pointer-events: none;
+  }
+  .slide-footer.on-dark { color: rgba(255,255,255,0.55); }
+
+  /* Section divider — large chapter pages */
+  .chapter {
+    background: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .chapter-dark {
+    background: #1a1a2e; color: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .big-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+
+  /* CTA button */
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #e8a020; color: #ffffff;
+    padding: 14px 32px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600; font-size: 15px;
+    text-decoration: none;
+    transition: background .2s ease, transform .15s ease;
+  }
+  .cta:hover { background: #d4911a; transform: translateY(-1px); }
+  .cta svg { width: 18px; height: 18px; }
+
+  /* Quote glyph */
+  .glyph-quote {
+    font-family: 'Playfair Display', serif;
+    color: #e8a020;
+    font-size: 88px;
+    line-height: 0.6;
+  }
+
+  /* Scroll hint on cover */
+  .scroll-hint {
+    position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    animation: scroll-bounce 2.6s ease-in-out infinite;
+  }
+  @keyframes scroll-bounce { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(8px);} }
+  .scroll-hint .arrow { width: 1px; height: 28px; background: rgba(255,255,255,0.5); }
+
+  /* Photo treatment - inset rounded full-bleed */
+  .photo-inset { border-radius: 16px; overflow: hidden; }
+
+  /* Mobile: drop scroll-snap */
+  @media (max-width: 900px) {
+    html { scroll-snap-type: none; }
+    .slide { min-height: auto; padding: 80px 20px !important; }
+    .dot-nav { display: none; }
+    .top-meta { top: 12px; right: 14px; }
+    .slide-footer { display: none; }
+  }
+
+  /* Print: each slide one page */
+  @page { size: 297mm 167mm; margin: 0; }
+  @media print {
+    .dot-nav, .top-meta, .scroll-hint { display: none !important; }
+    html, body { scroll-snap-type: none; }
+    .slide { page-break-after: always; min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP META -->
+<div class="top-meta" id="topMeta">
+  <span class="opacity-60">TEFL HEAVEN</span>
+  <span class="ml-4" id="slideCounter">01 / 44</span>
+</div>
+
+<!-- DOT NAV -->
+<nav class="dot-nav" id="dotNav" aria-label="Slide navigation"></nav>
+
+<main>
+
+<!-- ================================================================================ -->
+<!-- 1. COVER                                                                          -->
+<!-- ================================================================================ -->
+<section class="slide" id="s01" data-theme="dark" data-title="Cover">
+  <div class="absolute inset-0 img-slot img-real" data-slot="01-cover-bangkok-wat-arun.jpg" data-label="IMAGE: 01-cover-bangkok-wat-arun.jpg
+Full-bleed Bangkok at dusk, Wat Arun silhouetted in warm amber sky"
+       style="background-image: url('images/01-cover-bangkok-wat-arun.jpg');"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(18,18,31,0.92) 0%, rgba(26,26,46,0.55) 45%, rgba(26,26,46,0.18) 100%);"></div>
+
+  <div class="relative h-screen flex flex-col text-white p-12 md:p-20">
+    <div class="flex items-start justify-between">
+      <img src="https://www.teflheaven.com/images/logo.webp" alt="TEFL Heaven" class="h-10 brightness-0 invert opacity-95" onerror="this.style.display='none';" />
+      <div class="mono text-[10px] opacity-80 tracking-widest uppercase text-right">Programme Brochure  ·  N° 01  ·  2026 / 2027</div>
+    </div>
+
+    <div class="mt-auto">
+      <div class="eyebrow text-amber mb-6">
+        <span class="ruleline" style="background:#e8a020;"></span>A Teach Abroad Programme by TEFL Heaven
+      </div>
+      <h1 class="display text-white" style="font-size: clamp(72px, 14vw, 200px); line-height: 0.92;">Teach<br/>Thailand.</h1>
+      <p class="display-italic text-amber mt-6" style="font-size: clamp(24px, 3.2vw, 44px);">Live a story worth telling.</p>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-white/30 flex items-center justify-between text-[10px] mono uppercase tracking-widest opacity-90">
+      <span>Real Jobs  ·  Real Salaries  ·  Real Lives — Not a Holiday</span>
+      <span class="opacity-70">Est. 2007  ·  3,000+ Teachers Placed</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll to begin</span>
+    <span class="arrow"></span>
+  </div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 2. THE PROMISE                                                                    -->
+<!-- ================================================================================ -->
+<section class="slide chapter" id="s02" data-theme="light" data-title="The Promise">
+  <div class="p-12 md:p-20 max-w-6xl">
+    <div class="eyebrow mb-8"><span class="ruleline"></span>The Promise</div>
+    <h2 class="display text-ink" style="font-size: clamp(40px, 6.5vw, 92px);">
+      Real jobs.<br/>
+      Real salaries.<br/>
+      <span class="text-amber">Real lives —</span><br/>
+      <span class="display-italic">not a holiday.</span>
+    </h2>
+    <p class="mt-12 text-ink/75 max-w-2xl text-lg leading-relaxed">
+      In the next 44 pages, we'll show you exactly what teaching English in Thailand looks like with TEFL Heaven — the work, the pay, the visa, the people, the maths. Every detail. No marketing fluff.
+    </p>
+    <p class="mt-4 display-italic text-ink/55 text-xl">Take your time. This is a decision worth a few minutes of your life.</p>
+  </div>
+  <div class="slide-footer"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>02 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 3. A NOTE FROM MIKE                                                               -->
+<!-- ================================================================================ -->
+<section class="slide" id="s03" data-theme="light" data-title="A Note from Mike">
+  <div class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+    <div class="img-slot img-real" data-slot="03-mike-portrait.jpg" data-label="IMAGE: 03-mike-portrait.jpg
+Portrait of Mike Maitland — warm, candid, founder feel"
+         style="background-image: url('images/03-mike-portrait.jpg'); border-radius: 0;"></div>
+    <div class="p-12 md:p-20 flex flex-col justify-center">
+      <div class="eyebrow mb-6"><span class="ruleline"></span>A Note From the Founder</div>
+      <h2 class="display text-ink mb-8" style="font-size: clamp(40px, 5.5vw, 72px);">Hi, I'm Mike.</h2>
+      <span class="glyph-quote mb-2">"</span>
+      <div class="space-y-5 text-ink/85 text-[15px] md:text-[16px] leading-[1.75] max-w-xl">
+        <p>I went to Thailand to chase a girl. I wasn't planning to stay.</p>
+        <p>One night on Koh Tao, sat watching lanterns drift up over the water, something in me just… settled. I came home, married her, and we started TEFL Heaven from our kitchen table in 2007.</p>
+        <p>We didn't build this for the business of it. We built it for <em class="display-italic">the transformation of it</em> — because eighteen years on I still meet people who tell me that one year teaching in Thailand was the year their real life began.</p>
+        <p>Whatever pulled you to this brochure — the freedom, the adventure, the kids you haven't met yet — I'm telling you: <strong>feel the fear and do it anyway.</strong></p>
+        <p>The life you imagine is possible. We'll get you there.</p>
+      </div>
+      <div class="mt-10">
+        <p class="display-italic text-amber text-2xl">— Mike Maitland</p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">Founder · TEFL Heaven · Est. 2007</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>TEFL Heaven  ·  Teach Thailand  ·  2026 / 2027</span><span>03 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 4. CHAPTER DIVIDER — PART ONE                                                     -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s04" data-theme="dark" data-title="Part One Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part One</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">01.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">Why Thailand</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">The country that turns strangers into family</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part One  ·  Why Thailand</span><span>04 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 5. THREE REASONS                                                                  -->
+<!-- ================================================================================ -->
+<section class="slide" id="s05" data-theme="light" data-title="Three Reasons">
+  <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+    <div class="md:col-span-5 p-12 md:p-20 flex flex-col justify-between">
+      <div>
+        <div class="eyebrow mb-6"><span class="ruleline"></span>Why Thailand</div>
+        <h2 class="display text-ink" style="font-size: clamp(38px, 4.6vw, 64px);">
+          A country<br/>that turns<br/><span class="text-amber">strangers</span><br/><span class="text-amber">into family.</span>
+        </h2>
+      </div>
+      <p class="mono text-[10px] uppercase tracking-widest text-ink/45 mt-8">Three reasons people stay</p>
+    </div>
+    <div class="md:col-span-7 relative">
+      <div class="absolute inset-0 img-slot img-real" data-slot="05-night-market.jpg" data-label="IMAGE: 05-night-market.jpg
+Thai night market lit by paper lanterns — warm, sensory, alive"
+           style="background-image: url('images/05-night-market.jpg'); border-radius: 0;"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);"></div>
+
+      <div class="absolute bottom-8 left-8 right-8 bg-white p-8 md:p-10 shadow-xl" style="border-radius: 14px;">
+        <div class="grid gap-5">
+          <div class="grid grid-cols-[40px_1fr] gap-4">
+            <span class="mono text-amber text-sm">01</span>
+            <div>
+              <h3 class="display text-ink text-lg mb-1">The food. The warmth. The everyday magic.</h3>
+              <p class="text-[13px] text-ink/65 leading-relaxed">From the ฿40 noodles at midnight to the gran who keeps slipping you mangoes — Thailand turns ordinary days into stories you'll dine out on for years.</p>
+            </div>
+          </div>
+          <div class="border-t border-rule"></div>
+          <div class="grid grid-cols-[40px_1fr] gap-4">
+            <span class="mono text-amber text-sm">02</span>
+            <div>
+              <h3 class="display text-ink text-lg mb-1">A real paid job. Real time off.</h3>
+              <p class="text-[13px] text-ink/65 leading-relaxed">฿30,000–฿50,000 a month at government and private schools. Weekends free. October entirely off. Two months for Songkran &amp; the summer break.</p>
+            </div>
+          </div>
+          <div class="border-t border-rule"></div>
+          <div class="grid grid-cols-[40px_1fr] gap-4">
+            <span class="mono text-amber text-sm">03</span>
+            <div>
+              <h3 class="display text-ink text-lg mb-1">Teaching that changes you back.</h3>
+              <p class="text-[13px] text-ink/65 leading-relaxed">You'll meet kids who run out the gates yelling "Teacher!" and you'll never be quite the same person again. That's the part the website doesn't quite capture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part One  ·  Why Thailand</span><span>05 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 6. A DAY IN YOUR LIFE                                                             -->
+<!-- ================================================================================ -->
+<section class="slide" id="s06" data-theme="light" data-title="A Day in Your Life">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>A Day in Your Life</div>
+    <h2 class="display text-ink mb-10" style="font-size: clamp(56px, 9vw, 124px);">Tuesday.</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 flex-1">
+      <div class="md:col-span-7 space-y-5">
+        <div class="grid grid-cols-[80px_1fr] gap-5 items-baseline border-b border-rule pb-5">
+          <div class="display text-amber text-2xl">06:30</div>
+          <div>
+            <div class="display text-ink text-lg mb-1">Woken by the temple bells.</div>
+            <p class="text-[13px] text-ink/60">Motorbike taxi to school. Students bow as you walk in.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[80px_1fr] gap-5 items-baseline border-b border-rule pb-5">
+          <div class="display text-amber text-2xl">08:00</div>
+          <div>
+            <div class="display text-ink text-lg mb-1">First class.</div>
+            <p class="text-[13px] text-ink/60">Twenty kindergartners learning colours from you. One brings you a mango.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[80px_1fr] gap-5 items-baseline border-b border-rule pb-5">
+          <div class="display text-amber text-2xl">12:00</div>
+          <div>
+            <div class="display text-ink text-lg mb-1">Noodles, ฿40, cross-legged.</div>
+            <p class="text-[13px] text-ink/60">With the Thai teachers who've already adopted you.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[80px_1fr] gap-5 items-baseline border-b border-rule pb-5">
+          <div class="display text-amber text-2xl">15:00</div>
+          <div>
+            <div class="display text-ink text-lg mb-1">Done for the day.</div>
+            <p class="text-[13px] text-ink/60">Some teachers tutor on the side at ฿400–฿1,000/hour. You go to the beach.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-[80px_1fr] gap-5 items-baseline">
+          <div class="display text-amber text-2xl">19:00</div>
+          <div>
+            <div class="display text-ink text-lg mb-1">Night-market, fairy lights, ฿100.</div>
+            <p class="text-[13px] text-ink/60">Cohort WhatsApp lighting up about Koh Tao this weekend.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 grid grid-rows-3 gap-4 min-h-[480px]">
+        <div class="img-slot img-real row-span-2" data-slot="06a-tuktuk.jpg" data-label="IMAGE: 06a-tuktuk.jpg
+A Bangkok tuk-tuk at golden hour" style="background-image: url('images/06a-tuktuk.jpg');"></div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="img-slot img-real" data-slot="06b-beach.jpg" data-label="IMAGE: 06b-beach.jpg
+Friends walking on a sunset Thai beach" style="background-image: url('images/06b-beach.jpg');"></div>
+          <div class="img-slot img-real" data-slot="06c-rooftop.jpg" data-label="IMAGE: 06c-rooftop.jpg
+Bangkok rooftop bar at dusk" style="background-image: url('images/06c-rooftop.jpg');"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part One  ·  Why Thailand</span><span>06 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 7. CHAPTER DIVIDER — PART TWO                                                     -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s07" data-theme="dark" data-title="Part Two Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Two</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">02.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">What's Included</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">From the day you apply to the day you fly home</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Two  ·  What's Included</span><span>07 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 8. THE 4-WEEK OVERVIEW                                                            -->
+<!-- ================================================================================ -->
+<section class="slide" id="s08" data-theme="light" data-title="The 4-Week Adventure">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>The First Four Weeks</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5.4vw, 72px);">
+      Before you teach a single class,<br/>
+      <span class="text-amber">we put you through this.</span>
+    </h2>
+    <p class="display-italic text-ink/55 text-xl mt-2 mb-10">A real, in-person, accredited course — not a $19 weekend cert.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 flex-1">
+      <div class="card p-8 flex flex-col">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Week 01</div>
+        <h3 class="display text-ink text-2xl mb-2">Land, settle, soak in.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed mt-auto">Culture &amp; language orientation in Hua Hin. Temple visits, Muay Thai, Thai cooking, your cohort's beach welcome dinner.</p>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Week 02</div>
+        <h3 class="display text-ink text-2xl mb-2">Theory.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed mt-auto">ESL theory, lesson planning, classroom management. Grammar, phonetics, the four skills.</p>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Week 03</div>
+        <h3 class="display text-ink text-2xl mb-2">Practice.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed mt-auto">Live classroom presentations. Peer feedback. Real lesson plans, marked by trainers with two decades in-country.</p>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Week 04</div>
+        <h3 class="display text-ink text-2xl mb-2">A real classroom.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed mt-auto">Two full teaching practicum days in a local Thai school. Real students. Real feedback. Then you're matched and you fly out.</p>
+      </div>
+    </div>
+
+    <p class="mono text-[10px] uppercase tracking-widest text-ink/45 mt-10">120 hours of in-class training  ·  Accredited by TQUK &amp; Trinity College London-equivalent awarding bodies</p>
+  </div>
+  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>08 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 9. THE ORIENTATION (Week 1 detail)                                                -->
+<!-- ================================================================================ -->
+<section class="slide" id="s09" data-theme="light" data-title="Week 1 Detail">
+  <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+    <div class="md:col-span-5 relative">
+      <div class="absolute inset-0 img-slot img-real" data-slot="09-orientation-temple.jpg" data-label="IMAGE: 09-orientation-temple.jpg
+Cohort at a Thai temple during orientation week"
+           style="background-image: url('images/09-orientation-temple.jpg'); border-radius: 0;"></div>
+    </div>
+    <div class="md:col-span-7 p-12 md:p-20 flex flex-col justify-center">
+      <div class="eyebrow mb-6"><span class="ruleline"></span>Week 01  ·  Culture &amp; Language Orientation</div>
+      <h2 class="display text-ink mb-4" style="font-size: clamp(36px, 4.6vw, 60px);">The week your cohort<br/><span class="text-amber">becomes a family.</span></h2>
+      <p class="text-ink/70 text-[15px] leading-relaxed mb-8 max-w-lg">15–30 of you arrive on the same Sunday. By Friday's beach dinner you'll have lifelong friends. By the end of your year, you'll have a WhatsApp group that never goes quiet.</p>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[14px] text-ink/85 max-w-xl">
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Temple visit &amp; meditation</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Muay Thai class</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Thai cooking class</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Local market tour</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Beach welcome dinner</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Diversity &amp; classroom culture workshops</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Walking tour of Hua Hin</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Bangkok airport pickup</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>09 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 10. THE TESOL (Weeks 2-4 detail)                                                  -->
+<!-- ================================================================================ -->
+<section class="slide" id="s10" data-theme="light" data-title="TESOL Detail">
+  <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+    <div class="md:col-span-7 p-12 md:p-20 flex flex-col justify-center order-2 md:order-1">
+      <div class="eyebrow mb-6"><span class="ruleline"></span>Weeks 02 — 04  ·  In-class TESOL Course</div>
+      <h2 class="display text-ink mb-4" style="font-size: clamp(36px, 4.6vw, 60px);">120 hours.<br/><span class="text-amber">In a real room.</span></h2>
+      <p class="text-ink/70 text-[15px] leading-relaxed mb-8 max-w-lg">
+        Not a Google Doc. Not a 30-minute "module". A real classroom with a real trainer, peers presenting to you, and two days teaching actual Thai students with feedback you'll still remember in year three.
+      </p>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[14px] text-ink/85 max-w-xl">
+        <li class="flex gap-3"><span class="text-amber mono">·</span>ESL theory &amp; methodology</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Lesson planning, end to end</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Classroom management</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Teaching kids, teens, mixed-ability</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Grammar &amp; phonetics</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>The four skills (R/W/L/S)</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>Live lesson presentations</li>
+        <li class="flex gap-3"><span class="text-amber mono">·</span>2 days teaching practicum</li>
+      </ul>
+    </div>
+    <div class="md:col-span-5 relative order-1 md:order-2">
+      <div class="absolute inset-0 img-slot img-real" data-slot="10-tesol-classroom.jpg" data-label="IMAGE: 10-tesol-classroom.jpg
+A trainee teacher mid-lesson during TESOL course"
+           style="background-image: url('images/10-tesol-classroom.jpg'); border-radius: 0;"></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>10 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 11. ACCREDITATION                                                                 -->
+<!-- ================================================================================ -->
+<section class="slide" id="s11" data-theme="light" data-title="Accreditation">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col items-center justify-center text-center">
+    <div class="eyebrow mb-6"><span class="ruleline"></span>Why the Cert Matters</div>
+    <h2 class="display text-ink mb-6 max-w-4xl" style="font-size: clamp(40px, 5.5vw, 76px);">
+      The accreditation behind <span class="text-amber">your TESOL</span> is what unlocks the next ten years.
+    </h2>
+    <p class="text-ink/70 text-lg leading-relaxed max-w-2xl mb-12">
+      Your 120-hour TEFL Heaven TESOL is internationally recognised. Once you have it, you can teach legally — and at proper pay — in Thailand, Vietnam, Cambodia, Korea, Japan, Costa Rica, Mexico, Spain, Czechia and beyond. It is the most expensive part of the programme to deliver. It's also the cheapest insurance you'll ever buy.
+    </p>
+
+    <div class="grid grid-cols-3 gap-8 md:gap-12 max-w-4xl w-full">
+      <div class="text-center">
+        <div class="img-slot img-real h-24 mb-4 mx-auto" style="max-width:140px; background-image: url('images/11a-tquk.png'); background-color:#f5f5f5;" data-slot="11a-tquk.png" data-label="TQUK logo"></div>
+        <p class="display text-ink text-base">TQUK</p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">Training Qualifications UK</p>
+      </div>
+      <div class="text-center">
+        <div class="img-slot img-real h-24 mb-4 mx-auto" style="max-width:140px; background-image: url('images/11b-trinity.png'); background-color:#f5f5f5;" data-slot="11b-trinity.png" data-label="Trinity logo"></div>
+        <p class="display text-ink text-base">Trinity-tier</p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">Equivalent course design</p>
+      </div>
+      <div class="text-center">
+        <div class="img-slot img-real h-24 mb-4 mx-auto" style="max-width:140px; background-image: url('images/11c-ofqual.png'); background-color:#f5f5f5;" data-slot="11c-ofqual.png" data-label="Ofqual badge"></div>
+        <p class="display text-ink text-base">Ofqual-regulated</p>
+        <p class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">UK awarding bodies</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>11 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 12. WHAT'S INCLUDED — TRAINING & SUPPORT                                          -->
+<!-- ================================================================================ -->
+<section class="slide" id="s12" data-theme="dark" data-title="Included — Training">
+  <div class="chapter-dark min-h-screen p-12 md:p-20">
+    <div class="eyebrow-light mb-6"><span class="ruleline" style="background:#e8a020;"></span>Everything Included  ·  01 / 03</div>
+    <h2 class="display text-white" style="font-size: clamp(40px, 5.5vw, 76px);">
+      Training &amp; <span class="text-amber">support.</span>
+    </h2>
+    <p class="display-italic text-white/70 text-xl mt-3 mb-12">The bits that make you good before you ever stand in front of a class.</p>
+
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-4 text-white/90 text-[15px] max-w-6xl">
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">01</span>120-hour in-class TESOL course</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">02</span>One-week culture &amp; language orientation</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">03</span>40-hour online Thailand culture course (pre-arrival)</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">04</span>All TESOL course materials</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">05</span>Two real teaching practicum days in a Thai school</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">06</span>Dedicated pre-arrival trip coordinator</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">07</span>CV, intro-video and interview coaching</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">08</span>Mock interviews with our team</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">09</span>24 / 7 in-country support line</li>
+    </ul>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Two  ·  What's Included</span><span>12 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 13. WHAT'S INCLUDED — JOB & PLACEMENT                                             -->
+<!-- ================================================================================ -->
+<section class="slide" id="s13" data-theme="dark" data-title="Included — Placement">
+  <div class="chapter-dark min-h-screen p-12 md:p-20">
+    <div class="eyebrow-light mb-6"><span class="ruleline" style="background:#e8a020;"></span>Everything Included  ·  02 / 03</div>
+    <h2 class="display text-white" style="font-size: clamp(40px, 5.5vw, 76px);">
+      Your job, <span class="text-amber">handled.</span>
+    </h2>
+    <p class="display-italic text-white/70 text-xl mt-3 mb-12">Guaranteed paid placement — not a "we'll forward your CV" promise.</p>
+
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-4 text-white/90 text-[15px] max-w-6xl">
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">10</span>Guaranteed paid teaching placement</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">11</span>Contract negotiation with the school</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">12</span>Full visa &amp; work-permit guidance</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">13</span>Lifetime placement guarantee in our network</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">14</span>Bangkok airport pickup (Sunday before intake)</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">15</span>Orientation week accommodation</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">16</span>Help opening a Thai bank account</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">17</span>Thai SIM card on arrival</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">18</span>Document legalisation guidance</li>
+    </ul>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Two  ·  What's Included</span><span>13 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 14. WHAT'S INCLUDED — COMMUNITY & RESOURCES                                       -->
+<!-- ================================================================================ -->
+<section class="slide" id="s14" data-theme="dark" data-title="Included — Community">
+  <div class="chapter-dark min-h-screen p-12 md:p-20">
+    <div class="eyebrow-light mb-6"><span class="ruleline" style="background:#e8a020;"></span>Everything Included  ·  03 / 03</div>
+    <h2 class="display text-white" style="font-size: clamp(40px, 5.5vw, 76px);">
+      The bits no one <span class="text-amber">tells you about.</span>
+    </h2>
+    <p class="display-italic text-white/70 text-xl mt-3 mb-12">These are the reasons our teachers come back to teach a second year.</p>
+
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-4 text-white/90 text-[15px] max-w-6xl">
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">19</span>The TEFL Heaven welcome pack &amp; T-shirt</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">20</span>Lifetime teacher community access</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">21</span>Cohort WhatsApp group — yours forever</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">22</span>Earn-Back digital marketing programme</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">23</span>Beach welcome dinner with your cohort</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">24</span>In-country emergency line (24 / 7)</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">25</span>Year-round teacher meet-ups</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">26</span>Re-placement support if your school doesn't fit</li>
+      <li class="border-t border-white/15 pt-3"><span class="mono text-amber text-xs mr-3">27</span>Mike's personal email — actually answered</li>
+    </ul>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Two  ·  What's Included</span><span>14 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 15. WHAT'S NOT INCLUDED                                                           -->
+<!-- ================================================================================ -->
+<section class="slide" id="s15" data-theme="light" data-title="What's NOT Included">
+  <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+    <div class="md:col-span-5 p-12 md:p-20 flex flex-col justify-center">
+      <div class="eyebrow mb-6"><span class="ruleline"></span>The Honest Details</div>
+      <h2 class="display text-ink mb-4" style="font-size: clamp(40px, 5vw, 68px);">
+        What's <span class="text-amber"><em class="display-italic">not</em></span> included.
+      </h2>
+      <p class="text-ink/70 text-[15px] leading-relaxed max-w-lg">
+        We'd rather tell you up front than dance around it. These are the things you pay for yourself — most teachers cover them comfortably from their salary by month two.
+      </p>
+    </div>
+    <div class="md:col-span-7 p-12 md:p-20 flex flex-col justify-center">
+      <ul class="space-y-4 text-[15px] text-ink/85 max-w-xl">
+        <li class="flex gap-4 border-b border-rule pb-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Flights to Thailand.</strong> Average £550–£900 return from the UK.</div></li>
+        <li class="flex gap-4 border-b border-rule pb-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Travel / health insurance.</strong> Must cover the whole semester, lump-sum (not month-to-month). ~£250.</div></li>
+        <li class="flex gap-4 border-b border-rule pb-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Visa fees &amp; visa-trip costs.</strong> ~£230–£400 total. Counts as a paid mini-holiday in a neighbouring country.</div></li>
+        <li class="flex gap-4 border-b border-rule pb-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Long-term housing.</strong> Rent ฿5–15k a month. First month + 1–2 months' deposit. We help you find a place.</div></li>
+        <li class="flex gap-4 border-b border-rule pb-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Day-to-day living.</strong> Food, fun, transport. Realistic monthly £270–£640.</div></li>
+        <li class="flex gap-4"><span class="display text-amber text-xl leading-none">×</span><div><strong class="text-ink">Bank account setup fees.</strong> ~$10. We walk you through it.</div></li>
+      </ul>
+      <p class="display-italic text-amber mt-8 text-xl">Bring ~£950 startup. Earn £680–£1,135 / month. Save the rest.</p>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Two  ·  What's Included</span><span>15 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 16. CHAPTER DIVIDER — PART THREE                                                  -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s16" data-theme="dark" data-title="Part Three Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Three</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">03.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">Your Job &amp; Life</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">Where you'll teach, who you'll meet, what your week looks like</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Three  ·  Your Job &amp; Life</span><span>16 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 17. WHERE YOU'LL TEACH                                                            -->
+<!-- ================================================================================ -->
+<section class="slide" id="s17" data-theme="light" data-title="Where You'll Teach">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Where You Could Be Placed</div>
+    <h2 class="display text-ink mb-10" style="font-size: clamp(40px, 5vw, 68px);">From beach towns<br/><span class="text-amber">to capital cities.</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 flex-1">
+      <div class="md:col-span-5 img-slot img-real min-h-[400px]" data-slot="17-map-illustration.png" data-label="IMAGE: 17-map-illustration.png
+Hand-drawn line-art map of Thailand with amber city dots"
+           style="background-image: url('images/17-map-illustration.png');"></div>
+
+      <div class="md:col-span-7">
+        <h3 class="display text-ink text-2xl mb-2">Past placement towns</h3>
+        <div class="h-px bg-amber w-full mb-4"></div>
+        <ul class="divide-y divide-rule text-[14px]">
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Bangkok</strong><span class="text-ink/65">Capital. Energy, transport, every cuisine on Earth.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Hua Hin</strong><span class="text-ink/65">Beach town. Where your TESOL course is based.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Chiang Mai</strong><span class="text-ink/65">Mountain city, slower pace, digital-nomad heaven.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Phuket</strong><span class="text-ink/65">Island life. Tourism, beaches, surf.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Korat / Isaan</strong><span class="text-ink/65">North-east. Most authentic Thailand. Rice paddies.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Udon Thani · Khon Kaen</strong><span class="text-ink/65">Bustling Isaan hubs. Lower cost of living.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Pattaya</strong><span class="text-ink/65">Coast. Mix of resort life and real towns.</span></li>
+          <li class="grid grid-cols-[150px_1fr] gap-4 py-3"><strong class="text-ink">Trang · Sukhothai</strong><span class="text-ink/65">Smaller, quieter, friendlier classrooms.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>17 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 18. SCHOOL TYPES                                                                  -->
+<!-- ================================================================================ -->
+<section class="slide" id="s18" data-theme="light" data-title="School Types">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Who You'll Teach</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">Inside the classroom.</h2>
+    <p class="display-italic text-amber text-xl mb-10">Most teachers walk into one of these three.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
+      <!-- CARD 1 -->
+      <div class="card p-8 flex flex-col">
+        <div class="img-slot img-real h-40 mb-6 -mx-2" data-slot="18a-school-government.jpg" data-label="IMAGE: 18a-school-government.jpg
+Thai government primary classroom"
+             style="background-image: url('images/18a-school-government.jpg');"></div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">~ 70% of placements</div>
+        <h3 class="display text-ink text-xl mb-2">Government schools.</h3>
+        <p class="text-[13px] text-ink/65 leading-relaxed mb-4">Public, state-funded. K–12. You co-teach English alongside a Thai teacher.</p>
+        <ul class="text-[12.5px] text-ink/75 space-y-1 mt-auto">
+          <li>· ฿30,000–฿35,000 / month</li>
+          <li>· Class size 25–35</li>
+          <li>· Long October &amp; March–April breaks</li>
+          <li>· 16+ paid public holidays</li>
+        </ul>
+      </div>
+      <!-- CARD 2 -->
+      <div class="card p-8 flex flex-col">
+        <div class="img-slot img-real h-40 mb-6 -mx-2" data-slot="18b-school-private.jpg" data-label="IMAGE: 18b-school-private.jpg
+Private language-school classroom"
+             style="background-image: url('images/18b-school-private.jpg');"></div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">~ 30% of placements</div>
+        <h3 class="display text-ink text-xl mb-2">Private &amp; language schools.</h3>
+        <p class="text-[13px] text-ink/65 leading-relaxed mb-4">Better-resourced, smaller groups. Sometimes English-only; sometimes homeroom across multiple subjects in English.</p>
+        <ul class="text-[12.5px] text-ink/75 space-y-1 mt-auto">
+          <li>· ฿35,000–฿50,000+ / month</li>
+          <li>· Class size 15–25</li>
+          <li>· Modern facilities</li>
+          <li>· Open to teaching multiple subjects</li>
+        </ul>
+      </div>
+      <!-- CARD 3 -->
+      <div class="card-dark p-8 flex flex-col">
+        <div class="display text-amber text-6xl mb-6">฿60k+</div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">For Qualified Teachers</div>
+        <h3 class="display text-white text-xl mb-2">International schools.</h3>
+        <p class="text-[13px] text-white/75 leading-relaxed mb-4">Available later in your career. Requires a home-country teaching qualification (PGCE, B.Ed, QTS) on top of your TEFL.</p>
+        <ul class="text-[12.5px] text-white/85 space-y-1 mt-auto">
+          <li>· ฿60,000–฿100,000+ / month</li>
+          <li>· Smaller, well-resourced classes</li>
+          <li>· UK / US curricula</li>
+          <li>· A goal to grow into</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>18 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 19. HOURS & HOLIDAYS                                                              -->
+<!-- ================================================================================ -->
+<section class="slide" id="s19" data-theme="light" data-title="Hours & Holidays">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Hours, Holidays &amp; Time Off</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">
+      Your calendar,<br/><span class="text-amber">in plain English.</span>
+    </h2>
+    <p class="display-italic text-ink/55 text-xl mb-10">Teaching abroad is not 9-to-5. Read this carefully.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 flex-1">
+      <div class="md:col-span-7">
+        <ul class="divide-y divide-rule">
+          <li class="grid grid-cols-[140px_1fr] gap-6 py-5"><div class="display text-ink text-3xl">40 hrs</div><div><div class="display text-ink text-lg">Per week — total commitment</div><p class="text-[13px] text-ink/60 mt-1">Of which only 17–25 are actually classroom hours. The rest is grading, prep, and meetings.</p></div></li>
+          <li class="grid grid-cols-[140px_1fr] gap-6 py-5"><div class="display text-ink text-3xl">Mon–Fri</div><div><div class="display text-ink text-lg">Weekends off.</div><p class="text-[13px] text-ink/60 mt-1">No weekend work. Plenty of time to travel.</p></div></li>
+          <li class="grid grid-cols-[140px_1fr] gap-6 py-5"><div class="display text-amber text-3xl">October</div><div><div class="display text-ink text-lg">Mid-year break.</div><p class="text-[13px] text-ink/60 mt-1">Whole month off (depending on your school). Most teachers tour Vietnam, Cambodia, Indonesia.</p></div></li>
+          <li class="grid grid-cols-[140px_1fr] gap-6 py-5"><div class="display text-amber text-3xl">Mar–Apr</div><div><div class="display text-ink text-lg">Summer break.</div><p class="text-[13px] text-ink/60 mt-1">Most of March, all of April. Songkran (Thai New Year, mid-April) is unmissable.</p></div></li>
+          <li class="grid grid-cols-[140px_1fr] gap-6 py-5"><div class="display text-ink text-3xl">16+</div><div><div class="display text-ink text-lg">Paid Thai public holidays.</div><p class="text-[13px] text-ink/60 mt-1">Scattered across the year on top of the school breaks.</p></div></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-5 card-dark p-8">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Extra Income</div>
+        <h3 class="display text-white text-2xl mb-4">Side hustles, encouraged.</h3>
+        <p class="text-white/75 text-[14px] leading-relaxed mb-5">Many teachers double their take-home with private tutoring, weekend language schools, or online platforms.</p>
+        <ul class="space-y-3 text-[13px]">
+          <li><strong class="text-amber">Private tutoring</strong><br/><span class="text-white/65">฿400–฿1,000 / hour. 5 hrs a week = ฿8–20k / month.</span></li>
+          <li><strong class="text-amber">Weekend schools</strong><br/><span class="text-white/65">฿5,000–฿15,000 / month for a few Saturdays.</span></li>
+          <li><strong class="text-amber">Online teaching</strong><br/><span class="text-white/65">italki, Preply — work from your phone.</span></li>
+          <li><strong class="text-amber">Earn-Back Programme</strong><br/><span class="text-white/65">Our digital-marketing training — see slide 22.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>19 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 20. ACCOMMODATION                                                                 -->
+<!-- ================================================================================ -->
+<section class="slide" id="s20" data-theme="light" data-title="Accommodation">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Where You'll Live</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">A bed for week one.<br/><span class="text-amber">A home for the rest.</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 flex-1">
+      <div class="card p-6 flex flex-col">
+        <div class="img-slot img-real h-44 mb-4 -mx-1" data-slot="20a-huahin-accom.jpg" data-label="IMAGE: 20a-huahin-accom.jpg
+Simple, bright Hua Hin course bedroom"
+             style="background-image: url('images/20a-huahin-accom.jpg');"></div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">During the 4-Week Course</div>
+        <h3 class="display text-ink text-xl mb-2">Hua Hin orientation accommodation.</h3>
+        <p class="text-[13px] text-ink/65 leading-relaxed mb-3">Shared or private rooms in a teacher residence walking distance from the TESOL classroom. Beach a short ride away.</p>
+        <ul class="text-[12.5px] text-ink/75 space-y-1 mt-auto">
+          <li>· Included in the programme bundle</li>
+          <li>· Walking distance to course</li>
+          <li>· Wi-Fi &amp; cleaning, the works</li>
+        </ul>
+      </div>
+      <div class="card p-6 flex flex-col">
+        <div class="img-slot img-real h-44 mb-4 -mx-1" data-slot="20b-bangkok-apt.jpg" data-label="IMAGE: 20b-bangkok-apt.jpg
+Modern Bangkok apartment with city view"
+             style="background-image: url('images/20b-bangkok-apt.jpg');"></div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">Once You're Placed</div>
+        <h3 class="display text-ink text-xl mb-2">Your own apartment.</h3>
+        <p class="text-[13px] text-ink/65 leading-relaxed mb-3">Our in-country team helps you find a place near your school.</p>
+        <ul class="text-[12.5px] text-ink/75 space-y-1 mt-auto">
+          <li>· Bangkok 1-bed: ฿8,000–฿15,000</li>
+          <li>· Regional cities: ฿5,000–฿9,000</li>
+          <li>· Rural towns: ฿3,000–฿6,000</li>
+          <li>· First month + 1–2 months deposit</li>
+        </ul>
+      </div>
+      <div class="card-dark p-6 flex flex-col">
+        <div class="display text-amber text-4xl mb-3">Western standards.</div>
+        <div class="display-italic text-white text-2xl mb-4">Thai prices.</div>
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-2">What to Expect</div>
+        <p class="text-[13px] text-white/75 leading-relaxed mb-3">Most apartments are modern: aircon, hot water, Wi-Fi included, pool common at the cheaper end. Furnished is normal.</p>
+        <ul class="text-[12.5px] text-white/80 space-y-1 mt-auto">
+          <li>· Air-conditioning standard</li>
+          <li>· Most include Wi-Fi &amp; cleaning</li>
+          <li>· Building gyms / pools common</li>
+          <li>· Foreigner-friendly leases</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>20 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 21. VISA                                                                          -->
+<!-- ================================================================================ -->
+<section class="slide" id="s21" data-theme="light" data-title="Your Visa">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Your Visa</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">A clear, legal pathway.</h2>
+    <p class="display-italic text-amber text-xl mb-10">We handle the paperwork. You handle the packing.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 flex-1">
+      <div class="md:col-span-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border-t-2 border-amber pt-4">
+            <div class="mono text-amber text-xs uppercase tracking-widest mb-1">Step 01</div>
+            <h4 class="display text-ink text-lg">Arrive on a tourist visa</h4>
+            <p class="text-[12.5px] text-ink/60 mt-1">Or visa exemption — depends on your nationality.</p>
+          </div>
+          <div class="border-t-2 border-amber pt-4">
+            <div class="mono text-amber text-xs uppercase tracking-widest mb-1">Step 02</div>
+            <h4 class="display text-ink text-lg">Take your TESOL</h4>
+            <p class="text-[12.5px] text-ink/60 mt-1">We extend your visa once if needed (~฿1,900).</p>
+          </div>
+          <div class="border-t-2 border-amber pt-4">
+            <div class="mono text-amber text-xs uppercase tracking-widest mb-1">Step 03</div>
+            <h4 class="display text-ink text-lg">Get matched to a school</h4>
+            <p class="text-[12.5px] text-ink/60 mt-1">School issues your work paperwork.</p>
+          </div>
+          <div class="border-t-2 border-amber pt-4">
+            <div class="mono text-amber text-xs uppercase tracking-widest mb-1">Step 04</div>
+            <h4 class="display text-ink text-lg">Visa run for your Non-B</h4>
+            <p class="text-[12.5px] text-ink/60 mt-1">3–4 days in a neighbouring country. Return on a Non-Immigrant B work visa.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-8 border-t border-rule pt-6">
+          <div><div class="mono text-amber text-xs uppercase tracking-widest mb-1">Visa Type</div><p class="text-ink text-[13px]">Non-Immigrant B Work Visa</p></div>
+          <div><div class="mono text-amber text-xs uppercase tracking-widest mb-1">Visa Trip Cost</div><p class="text-ink text-[13px]">~£230–£400 (you cover this)</p></div>
+          <div><div class="mono text-amber text-xs uppercase tracking-widest mb-1">Renewal</div><p class="text-ink text-[13px]">School handles, annually</p></div>
+        </div>
+      </div>
+      <div class="md:col-span-5 card-dark p-8">
+        <div class="mono text-amber text-xs uppercase tracking-widest mb-3">Why This Matters</div>
+        <h3 class="display text-white text-2xl mb-4">A real work permit. Not a tourist hustle.</h3>
+        <p class="text-white/80 text-[14px] leading-relaxed mb-3">Some agencies push teachers to "teach on a tourist visa" — it's illegal and gets you deported. Our schools all run the legal Non-B route.</p>
+        <p class="text-white/80 text-[14px] leading-relaxed">You walk into your classroom on day one fully legal, with a work permit, in Thailand's social security system, with the right to a Thai bank account and a phone contract. No edges to it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Three  ·  Your Job &amp; Life</span><span>21 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 22. EARN-BACK PROGRAMME                                                           -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s22" data-theme="dark" data-title="The Earn-Back Programme">
+  <div class="min-h-screen p-12 md:p-20 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7">
+      <div class="eyebrow-light mb-6"><span class="ruleline" style="background:#e8a020;"></span>Unique to TEFL Heaven</div>
+      <h2 class="display text-white mb-4" style="font-size: clamp(40px, 5.5vw, 76px);">The <span class="text-amber">Earn-Back</span> Programme.</h2>
+      <p class="display-italic text-amber text-2xl mb-8">Get paid to share your story.</p>
+
+      <div class="space-y-5 text-white/85 text-[15px] leading-[1.75] max-w-xl">
+        <p>You're going to take a thousand photos. You're going to film yourself getting yelled "Teacher!" at by 25 small humans. You're going to write things in a notebook you'll never re-read.</p>
+        <p class="display-italic text-amber text-xl">What if you got paid for it?</p>
+        <p>The Earn-Back Programme is our in-house digital-marketing training: content strategy, audience building, referrals, monetisation. It's serious — taught by a working marketer, not a TikTok hack.</p>
+        <p class="text-amber">Some of our teachers earn back the entire cost of the programme before their first paycheck.</p>
+      </div>
+    </div>
+    <div class="md:col-span-5 grid grid-cols-2 gap-4">
+      <div class="bg-white/5 p-5"><div class="mono text-amber text-xs">01</div><div class="display text-white text-lg mt-1">Content training</div><p class="text-white/65 text-[12px] mt-2">Reels, TikTok, YouTube Shorts. Hooks, captions, what travels.</p></div>
+      <div class="bg-white/5 p-5"><div class="mono text-amber text-xs">02</div><div class="display text-white text-lg mt-1">Audience growth</div><p class="text-white/65 text-[12px] mt-2">Niche, value-led growth from zero. Not chasing — building.</p></div>
+      <div class="bg-white/5 p-5"><div class="mono text-amber text-xs">03</div><div class="display text-white text-lg mt-1">Referral system</div><p class="text-white/65 text-[12px] mt-2">Refer a friend who signs up — you get paid.</p></div>
+      <div class="bg-white/5 p-5"><div class="mono text-amber text-xs">04</div><div class="display text-white text-lg mt-1">Monetisation paths</div><p class="text-white/65 text-[12px] mt-2">Brand deals, affiliate, online courses. Lifetime skills.</p></div>
+    </div>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Three  ·  Your Job &amp; Life</span><span>22 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 23. CHAPTER DIVIDER — PART FOUR                                                   -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s23" data-theme="dark" data-title="Part Four Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Four</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">04.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">Are You Eligible?</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">A short, honest checklist</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Four  ·  Are You Eligible?</span><span>23 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 24. ELIGIBILITY CHECKLIST                                                         -->
+<!-- ================================================================================ -->
+<section class="slide" id="s24" data-theme="light" data-title="Eligibility Checklist">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Can I Apply?</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">A short, honest checklist.</h2>
+    <p class="display-italic text-amber text-xl mb-10">Tick five boxes — you're in.</p>
+
+    <ul class="divide-y divide-rule max-w-4xl">
+      <li class="grid grid-cols-[120px_1fr] gap-6 py-5">
+        <span class="mono text-amber text-xs uppercase tracking-widest pt-1">Age</span>
+        <div><div class="display text-ink text-xl mb-1">21 to 55 years old</div><p class="text-[13px] text-ink/60">56–59 considered case-by-case if you have teaching experience.</p></div>
+      </li>
+      <li class="grid grid-cols-[120px_1fr] gap-6 py-5">
+        <span class="mono text-amber text-xs uppercase tracking-widest pt-1">Degree</span>
+        <div><div class="display text-ink text-xl mb-1">A Bachelor's degree (any subject)</div><p class="text-[13px] text-ink/60">Required for the Thai work permit.</p></div>
+      </li>
+      <li class="grid grid-cols-[120px_1fr] gap-6 py-5">
+        <span class="mono text-amber text-xs uppercase tracking-widest pt-1">TEFL</span>
+        <div><div class="display text-ink text-xl mb-1">A 120-hour accredited TEFL / TESOL / CELTA</div><p class="text-[13px] text-ink/60">Don't have one? It's included — the 4-week course in Hua Hin.</p></div>
+      </li>
+      <li class="grid grid-cols-[120px_1fr] gap-6 py-5">
+        <span class="mono text-amber text-xs uppercase tracking-widest pt-1">Passport</span>
+        <div><div class="display text-ink text-xl mb-1">USA · Canada · UK · Ireland · Australia · NZ · South Africa</div><p class="text-[13px] text-ink/60">EU, Russia, Turkey, Latin America considered case-by-case with C1 English.</p></div>
+      </li>
+      <li class="grid grid-cols-[120px_1fr] gap-6 py-5">
+        <span class="mono text-amber text-xs uppercase tracking-widest pt-1">Check</span>
+        <div><div class="display text-ink text-xl mb-1">A clean criminal record check</div><p class="text-[13px] text-ink/60">Country-specific (FBI / ACRO / RCMP / etc.). Minor old offences considered.</p></div>
+      </li>
+    </ul>
+  </div>
+  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>24 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 25. DON'T COUNT YOURSELF OUT                                                      -->
+<!-- ================================================================================ -->
+<section class="slide" id="s25" data-theme="light" data-title="Don't Count Yourself Out">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Don't Count Yourself Out</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">The things people <span class="text-amber">wrongly</span> rule themselves out for.</h2>
+    <p class="display-italic text-ink/55 text-xl mb-10">Read this carefully. You're probably more eligible than you think.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl">
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">Tattoos.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Small visible tattoos are usually fine — tell us at signup. The only firm no is Buddha imagery (out of respect — it's actually illegal to display in some contexts in Thailand).</p>
+      </div>
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">No teaching experience.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Most of our teachers have never taught before. The TESOL is built exactly for that. Eighteen years of doing this; the methodology is sound.</p>
+      </div>
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">Religious dress.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Hijabs and similar are reviewed case-by-case. Flexibility on placement helps a lot — we've placed many. Talk to us honestly.</p>
+      </div>
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">Family or pets.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Possible case-by-case for partners and dependents (you cover all costs and logistics for them). Most couples come together and find adjacent placements.</p>
+      </div>
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">Health conditions.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Most are fine. Some (epilepsy, anxiety with meds, depression with meds) need a doctor's note. We'll talk it through honestly and tell you up front what's workable.</p>
+      </div>
+      <div class="border-l-2 border-amber pl-5">
+        <h3 class="display text-ink text-xl mb-2">Old criminal offences.</h3>
+        <p class="text-[14px] text-ink/65 leading-relaxed">Minor things from years ago are reviewed case-by-case. Honesty up front is the only thing that matters.</p>
+      </div>
+    </div>
+
+    <p class="display-italic text-amber mt-10 text-xl">If anything is a "maybe", just ask. We've seen it before.</p>
+  </div>
+  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>25 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 26. WHAT PEOPLE WORRY ABOUT (FAQs)                                                -->
+<!-- ================================================================================ -->
+<section class="slide" id="s26" data-theme="light" data-title="What People Worry About">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>What People Worry About</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">Honest answers.</h2>
+    <p class="display-italic text-amber text-xl mb-10">To the things you're not asking out loud.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"I've never taught before. Am I qualified?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">That's exactly what the 4-week TESOL is for. You'll learn to plan a lesson, run a classroom, and teach English from zero. Most of our teachers had never taught before they signed up.</p></div>
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"Is Thailand safe?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">Thailand is one of the safest places to teach abroad. You arrive in a cohort, you're supported by our in-country team, and we're a phone call away 24/7.</p></div>
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"What if I'm lonely?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">You arrive with 15–30 other teachers in your cohort. By the end of week one, you'll have lifelong friends. The TEFL Heaven WhatsApp groups don't go quiet for years.</p></div>
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"What if I hate it?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">First, you probably won't. But if something's wrong, our placement guarantee means we move you. If it's really not for you, you leave with a Trinity-tier TEFL and a story worth telling.</p></div>
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"Can I really afford this?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">With our Earn-Back digital-marketing programme, many teachers cover a chunk of their costs before they fly. Once you're earning ฿30–฿50k with rent at ฿5–฿15k, the maths gets very friendly very fast.</p></div>
+      <div class="card p-6"><h3 class="display text-ink text-base mb-2">"What about my partner / pets?"</h3><p class="text-[13px] text-ink/65 leading-relaxed">Both are possible case-by-case. You cover all costs and logistics for them — programme support stays focused on you. Most couples come together and find adjacent placements.</p></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>26 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 27. THE NOT-FOR-YOU LIST (polarity slide)                                         -->
+<!-- ================================================================================ -->
+<section class="slide" id="s27" data-theme="light" data-title="The Not-For-You List">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col items-center justify-center text-center">
+    <div class="eyebrow mb-6"><span class="ruleline"></span>An Honest Filter</div>
+    <h2 class="display text-ink mb-8 max-w-4xl" style="font-size: clamp(40px, 5.5vw, 72px);">This programme is <span class="text-amber"><em class="display-italic">not</em></span> for everyone.</h2>
+
+    <div class="max-w-3xl space-y-4 text-left text-[15px] text-ink/85 leading-relaxed">
+      <p>It's not for people who think they're going on a year-long holiday. We will not hand you a beach with a paycheck attached. You will teach 25–35 small humans English on Tuesday morning when you're tired, sweating, and possibly hungover.</p>
+      <p>It's not for people who want guarantees we can't make. Schools are real schools with real expectations. Some weeks will be hard. Some classes will not love you.</p>
+      <p>It's not for people who already had it all figured out. If you don't need this, don't apply.</p>
+    </div>
+
+    <p class="display-italic text-amber mt-10 max-w-2xl text-xl">It is for people who suspect there's a different life available, and who are willing to take twelve months to find out.</p>
+  </div>
+  <div class="slide-footer"><span>Part Four  ·  Are You Eligible?</span><span>27 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 28. CHAPTER DIVIDER — PART FIVE                                                   -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s28" data-theme="dark" data-title="Part Five Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Five</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">05.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">Why TEFL Heaven</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">Nineteen years. Three thousand teachers. One family.</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Five  ·  Why TEFL Heaven</span><span>28 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 29. SINCE 2007 — STATS                                                            -->
+<!-- ================================================================================ -->
+<section class="slide" id="s29" data-theme="light" data-title="Since 2007">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Since 2007</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5.5vw, 76px);">A family business.</h2>
+    <p class="display-italic text-amber text-2xl mb-10">Not a faceless platform.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 flex-1">
+      <div class="md:col-span-5 text-ink/85 text-[15px] leading-[1.7]">
+        <p class="mb-4">Mike and his wife started TEFL Heaven from their kitchen table in 2007 — the same year their first teacher flew to Thailand.</p>
+        <p class="mb-4">Eighteen years on, the company is still family-run. Every placement is handled by someone who has lived abroad themselves.</p>
+        <p class="display-italic text-amber text-xl mt-6">"Real jobs. Real salaries. Real lives — not a holiday."</p>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="card p-6"><div class="display text-ink text-4xl">2007</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Founded</div><p class="text-[12px] text-ink/55">Built by founders who teach abroad themselves.</p></div>
+        <div class="card p-6"><div class="display text-ink text-4xl">3,000+</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Teachers Placed</div><p class="text-[12px] text-ink/55">In Thailand alone. Thousands more across our network.</p></div>
+        <div class="card p-6"><div class="display text-ink text-4xl">10</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Destinations</div><p class="text-[12px] text-ink/55">Thailand · Vietnam · Cambodia · Japan · Korea · Costa Rica · Mexico · Spain · Czechia.</p></div>
+        <div class="card p-6"><div class="display text-ink text-4xl">150+</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Video Stories</div><p class="text-[12px] text-ink/55">Filmed alumni testimonials.</p></div>
+        <div class="card p-6"><div class="display text-ink text-5xl leading-none">∞</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Lifetime Placement</div><p class="text-[12px] text-ink/55">One contract done? We help you teach again anywhere in our network.</p></div>
+        <div class="card p-6"><div class="display text-ink text-3xl">Trinity/<br/>TQUK</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-2 mb-2">Accredited</div><p class="text-[12px] text-ink/55">120-hour TESOL recognised by Ofqual-regulated UK awarding bodies.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>29 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 30. THE TEAM                                                                      -->
+<!-- ================================================================================ -->
+<section class="slide" id="s30" data-theme="light" data-title="The Team">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col items-center justify-center text-center">
+    <div class="eyebrow mb-6"><span class="ruleline"></span>Who You'll Actually Talk To</div>
+    <h2 class="display text-ink mb-2 max-w-4xl" style="font-size: clamp(40px, 5vw, 68px);">A small team. Real names. <span class="text-amber">Real phone numbers.</span></h2>
+    <p class="text-ink/65 max-w-2xl mt-4 text-[15px] leading-relaxed mb-12">When you fill in our enquiry form, you don't get a chatbot. You get a person — usually Mike or one of three others. We've all lived in Thailand. We've all taught.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl">
+      <div class="text-center">
+        <div class="img-slot img-real w-32 h-32 mx-auto rounded-full mb-3" data-slot="30a-mike.jpg" data-label="Mike" style="background-image: url('images/30a-mike.jpg'); border-radius: 9999px;"></div>
+        <p class="display text-ink text-lg">Mike</p>
+        <p class="mono text-amber text-[10px] uppercase tracking-widest">Founder</p>
+      </div>
+      <div class="text-center">
+        <div class="img-slot img-real w-32 h-32 mx-auto rounded-full mb-3" data-slot="30b-team-2.jpg" data-label="Placement Lead" style="background-image: url('images/30b-team-2.jpg'); border-radius: 9999px;"></div>
+        <p class="display text-ink text-lg">[ Name ]</p>
+        <p class="mono text-amber text-[10px] uppercase tracking-widest">Placement Lead</p>
+      </div>
+      <div class="text-center">
+        <div class="img-slot img-real w-32 h-32 mx-auto rounded-full mb-3" data-slot="30c-team-3.jpg" data-label="In-Country Coordinator" style="background-image: url('images/30c-team-3.jpg'); border-radius: 9999px;"></div>
+        <p class="display text-ink text-lg">[ Name ]</p>
+        <p class="mono text-amber text-[10px] uppercase tracking-widest">In-Country, Hua Hin</p>
+      </div>
+      <div class="text-center">
+        <div class="img-slot img-real w-32 h-32 mx-auto rounded-full mb-3" data-slot="30d-team-4.jpg" data-label="Marketing & Earn-Back" style="background-image: url('images/30d-team-4.jpg'); border-radius: 9999px;"></div>
+        <p class="display text-ink text-lg">[ Name ]</p>
+        <p class="mono text-amber text-[10px] uppercase tracking-widest">Marketing &amp; Earn-Back</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>30 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 31. REAL TEACHERS — TESTIMONIALS                                                  -->
+<!-- ================================================================================ -->
+<section class="slide" id="s31" data-theme="light" data-title="Real Teachers">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Real Teachers  ·  Real Stories</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">People like you.</h2>
+    <p class="display-italic text-amber text-xl mb-12">Doing this. Right now.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
+      <div class="card p-8 flex flex-col">
+        <div class="img-slot img-real w-24 h-24 mx-auto rounded-full mb-4" data-slot="31a-teacher-A.jpg" data-label="Teacher A" style="background-image: url('images/31a-teacher-A.jpg'); border-radius: 9999px;"></div>
+        <span class="glyph-quote text-3xl">"</span>
+        <p class="display-italic text-ink text-[15px] leading-relaxed flex-1">[ Quote placeholder — one or two sentences. Specific. Sensory. Not generic. ]</p>
+        <div class="h-px bg-rule my-4"></div>
+        <div class="font-semibold text-ink">[ Name ], [ Age ]</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">[ Hometown ] → [ City ]  ·  Cohort [ MM/YYYY ]</div>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="img-slot img-real w-24 h-24 mx-auto rounded-full mb-4" data-slot="31b-teacher-B.jpg" data-label="Teacher B" style="background-image: url('images/31b-teacher-B.jpg'); border-radius: 9999px;"></div>
+        <span class="glyph-quote text-3xl">"</span>
+        <p class="display-italic text-ink text-[15px] leading-relaxed flex-1">[ Quote placeholder — one or two sentences. Specific. Sensory. Not generic. ]</p>
+        <div class="h-px bg-rule my-4"></div>
+        <div class="font-semibold text-ink">[ Name ], [ Age ]</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">[ Hometown ] → [ City ]  ·  Cohort [ MM/YYYY ]</div>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="img-slot img-real w-24 h-24 mx-auto rounded-full mb-4" data-slot="31c-teacher-C.jpg" data-label="Teacher C" style="background-image: url('images/31c-teacher-C.jpg'); border-radius: 9999px;"></div>
+        <span class="glyph-quote text-3xl">"</span>
+        <p class="display-italic text-ink text-[15px] leading-relaxed flex-1">[ Quote placeholder — one or two sentences. Specific. Sensory. Not generic. ]</p>
+        <div class="h-px bg-rule my-4"></div>
+        <div class="font-semibold text-ink">[ Name ], [ Age ]</div>
+        <div class="mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">[ Hometown ] → [ City ]  ·  Cohort [ MM/YYYY ]</div>
+      </div>
+    </div>
+
+    <p class="mono text-[10px] uppercase tracking-widest text-ink/45 mt-10 text-center">150+ filmed alumni stories at teflheaven.com &amp; YouTube @teflheavenHQ</p>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>31 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 32. SIX DIFFERENTIATORS                                                           -->
+<!-- ================================================================================ -->
+<section class="slide" id="s32" data-theme="light" data-title="Six Differentiators">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Why TEFL Heaven</div>
+    <h2 class="display text-ink mb-12" style="font-size: clamp(40px, 5.5vw, 76px);">Six things you won't<br/><span class="text-amber">find anywhere else.</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 flex-1">
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">01</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">A family business — not a faceless platform.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed">Mike, his wife, and their team built this from the kitchen table up in 2007. Call us, you talk to people who know your name.</p>
+      </div>
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">02</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">19 years in this exact corner of the world.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed">Our in-country team in Hua Hin has placed thousands of teachers across Thailand. The relationships with schools are decades deep.</p>
+      </div>
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">03</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">Internationally accredited TESOL.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed">120 hours of real, in-class training. Trinity / TQUK-tier, Ofqual-recognised. Not a $19 weekend cert.</p>
+      </div>
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">04</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">Lifetime placement guarantee.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed">Finish one contract? We'll help place you in any of our ten partner countries — for life.</p>
+      </div>
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">05</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">24 / 7 support, every day, forever.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed">From the moment you apply to years after you fly home. Pre-arrival coordinator, in-country team, emergency line, alumni community.</p>
+      </div>
+      <div>
+        <div class="display text-amber" style="font-size: clamp(40px, 4.5vw, 64px); line-height: 0.9;">06</div>
+        <h3 class="display text-ink text-lg mt-3 mb-2">The Earn-Back Programme.</h3>
+        <p class="text-[13px] text-ink/60 leading-relaxed"><strong class="text-ink">Get paid to share your story.</strong> Our digital-marketing training so you earn meaningful income online while you teach.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>32 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 33. THE COMPARISON (polarity slide)                                              -->
+<!-- ================================================================================ -->
+<section class="slide" id="s33" data-theme="light" data-title="The Comparison">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>How We Compare</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">A blunt comparison.</h2>
+    <p class="display-italic text-ink/55 text-xl mb-10">Most agencies will not show you this slide. We will.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl">
+      <!-- Header row -->
+      <div class="hidden md:block"></div>
+      <div class="card-dark p-6 text-center"><div class="display text-2xl">TEFL Heaven</div></div>
+      <div class="card p-6 text-center"><div class="display text-2xl text-ink/55">Typical "TEFL Agency"</div></div>
+
+      <!-- rows -->
+      <div class="border-b border-rule p-4 mono text-amber text-xs uppercase tracking-widest">Course</div>
+      <div class="card-dark p-4 text-[13px]">120 hr in-class · TQUK / Trinity-tier · taught by teachers</div>
+      <div class="card p-4 text-[13px] text-ink/65">$19 online "weekend cert" with auto-marked quizzes</div>
+
+      <div class="border-b border-rule p-4 mono text-amber text-xs uppercase tracking-widest">Job</div>
+      <div class="card-dark p-4 text-[13px]">Guaranteed paid placement, contract negotiated for you</div>
+      <div class="card p-4 text-[13px] text-ink/65">"We'll forward your CV" — and good luck</div>
+
+      <div class="border-b border-rule p-4 mono text-amber text-xs uppercase tracking-widest">Visa</div>
+      <div class="card-dark p-4 text-[13px]">Legal Non-B work visa, full guidance, in-country team</div>
+      <div class="card p-4 text-[13px] text-ink/65">"Just teach on a tourist visa" — illegal &amp; gets you deported</div>
+
+      <div class="border-b border-rule p-4 mono text-amber text-xs uppercase tracking-widest">Support</div>
+      <div class="card-dark p-4 text-[13px]">24/7 in-country line, founder-level access, lifetime alumni network</div>
+      <div class="card p-4 text-[13px] text-ink/65">A chatbot and a UK call centre that closes at 5pm</div>
+
+      <div class="border-b border-rule p-4 mono text-amber text-xs uppercase tracking-widest">After</div>
+      <div class="card-dark p-4 text-[13px]">Lifetime placement in 10 partner countries</div>
+      <div class="card p-4 text-[13px] text-ink/65">You're on your own once you've paid</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>33 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 34. LIFETIME PLACEMENT                                                            -->
+<!-- ================================================================================ -->
+<section class="slide" id="s34" data-theme="light" data-title="Lifetime Placement">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Lifetime Placement</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">One contract.<br/>Ten countries.<br/><span class="text-amber">Forever, on us.</span></h2>
+    <p class="text-ink/70 text-[15px] max-w-2xl leading-relaxed mt-6 mb-10">Finish a year in Thailand and you'll have your TESOL, real classroom hours, and a glowing reference. We'll help you place again — in any of our partner countries — for the rest of your career. No re-application fee. Forever.</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 flex-1">
+      <div class="card p-4"><div class="display text-ink text-lg">Thailand</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Your first stop</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Vietnam</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">High savings · big cities</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Cambodia</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">No degree needed</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Japan</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">12-month contracts</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">South Korea</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Free flat · 13th month</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Costa Rica</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Pura vida</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Mexico</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Any age · no degree</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Spain</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Barcelona · Madrid</div></div>
+      <div class="card p-4"><div class="display text-ink text-lg">Czechia</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">Prague · Central Europe</div></div>
+      <div class="card-dark p-4"><div class="display text-amber text-lg">+ more</div><div class="mono text-amber text-[10px] uppercase tracking-widest mt-1">26 country guides on our site</div></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Five  ·  Why TEFL Heaven</span><span>34 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 35. CHAPTER DIVIDER — PART SIX                                                    -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s35" data-theme="dark" data-title="Part Six Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Six</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">06.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">The Numbers</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">What you bring · what you earn · what you save</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Six  ·  The Numbers</span><span>35 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 36. MONEY MATH                                                                    -->
+<!-- ================================================================================ -->
+<section class="slide" id="s36" data-theme="light" data-title="The Money Math">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>The Money Math</div>
+    <h2 class="display text-ink mb-1" style="font-size: clamp(40px, 5vw, 68px);">Bring this much.</h2>
+    <p class="display-italic text-amber mb-10" style="font-size: clamp(24px, 3vw, 40px);">Earn that much. Save the rest.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
+      <div class="card p-8 flex flex-col">
+        <div class="h-1 bg-amber mb-5 -mx-8 -mt-8"></div>
+        <div class="mono text-amber text-[10px] uppercase tracking-widest mb-2 mt-3">Bring  ·  Startup</div>
+        <div class="display text-ink" style="font-size: clamp(40px, 4.5vw, 64px);">~ £950</div>
+        <p class="text-[13px] text-ink/65 leading-relaxed mt-auto">Covers your first month before paycheck — flights, first rent + deposit, food, sim, transport.</p>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="h-1 bg-amber mb-5 -mx-8 -mt-8"></div>
+        <div class="mono text-amber text-[10px] uppercase tracking-widest mb-2 mt-3">Earn  ·  Monthly</div>
+        <div class="display text-ink" style="font-size: clamp(34px, 3.6vw, 56px);">฿30k–฿50k</div>
+        <p class="text-[13px] text-ink/65 leading-relaxed mt-auto">About £680–£1,135 a month. Government schools at the lower end; private &amp; language schools higher.</p>
+      </div>
+      <div class="card p-8 flex flex-col">
+        <div class="h-1 bg-amber mb-5 -mx-8 -mt-8"></div>
+        <div class="mono text-amber text-[10px] uppercase tracking-widest mb-2 mt-3">Save  ·  Monthly</div>
+        <div class="display text-ink" style="font-size: clamp(36px, 4vw, 60px);">£250–£600</div>
+        <p class="text-[13px] text-ink/65 leading-relaxed mt-auto">After typical living costs of £270–£640. Tutoring &amp; Earn-Back can push this much higher.</p>
+      </div>
+    </div>
+
+    <p class="display-italic text-ink/55 text-[14px] mt-8">Numbers are realistic averages — every teacher's situation is different. Ask us and we'll run your numbers honestly.</p>
+  </div>
+  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>36 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 37. YOUR INVESTMENT                                                              -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s37" data-theme="dark" data-title="Your Investment">
+  <div class="min-h-screen p-12 md:p-20 grid grid-cols-1 md:grid-cols-12 gap-10">
+    <div class="md:col-span-5 flex flex-col justify-center">
+      <div class="eyebrow-light mb-4"><span class="ruleline" style="background:#e8a020;"></span>Your Investment</div>
+      <h2 class="display text-white mb-3" style="font-size: clamp(40px, 4.6vw, 60px);">Less than three months of teaching <span class="text-amber">pays it back.</span></h2>
+
+      <div class="bg-white/5 p-8 mt-8" style="border-radius: 12px;">
+        <div class="mono text-amber text-[10px] uppercase tracking-widest mb-3">Programme Fee</div>
+        <div class="display text-white" style="font-size: clamp(56px, 7vw, 96px); line-height: 1;">£[PRICE]</div>
+        <p class="mono text-white/55 text-[10px] uppercase tracking-widest mt-3">Latest price always on teflheaven.com</p>
+        <div class="h-px bg-amber my-6"></div>
+        <div class="font-semibold text-white">Payment plan available</div>
+        <p class="text-white/65 text-[13px] mt-2">[ Deposit ] now  ·  [ Balance ] before you fly</p>
+        <p class="text-white/65 text-[13px]">Ask us for details.</p>
+      </div>
+    </div>
+
+    <div class="md:col-span-7 flex flex-col justify-center">
+      <div class="mono text-amber text-[10px] uppercase tracking-widest mb-6">What Your Fee Covers</div>
+      <div class="space-y-5">
+        <div class="border-b border-white/15 pb-5">
+          <h3 class="display text-white text-2xl mb-1">Training</h3>
+          <p class="text-[14px] text-white/85 leading-relaxed">Accredited 120-hour TESOL · Orientation week · Online culture course · Course materials · Practicum days · Welcome pack &amp; T-shirt.</p>
+        </div>
+        <div class="border-b border-white/15 pb-5">
+          <h3 class="display text-white text-2xl mb-1">Placement</h3>
+          <p class="text-[14px] text-white/85 leading-relaxed">Guaranteed paid job match · Contract negotiation · Visa &amp; work-permit guidance · CV / video / interview coaching · Mock interviews · Bangkok airport pickup.</p>
+        </div>
+        <div>
+          <h3 class="display text-white text-2xl mb-1">Support for life</h3>
+          <p class="text-[14px] text-white/85 leading-relaxed">24/7 in-country line · Bank-account help · Thai SIM · Earn-Back digital-marketing training · Lifetime placement in 10 partner countries · Alumni community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Six  ·  The Numbers</span><span>37 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 38. INTAKE DATES — 2026                                                          -->
+<!-- ================================================================================ -->
+<section class="slide" id="s38" data-theme="light" data-title="Intake Dates 2026">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>When You Can Start  ·  2026</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">Pick your Monday.</h2>
+    <p class="display-italic text-amber text-xl mb-10">Nine cohorts in 2026. Sign-up cut-off three months before intake.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-2 max-w-6xl">
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 30 March</strong><span class="text-ink/55 text-[12px]">5–5.5 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 27 April</strong><span class="text-amber text-[12px]">★ best for May semester</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 25 May</strong><span class="text-ink/55 text-[12px]">Summer Undergrad</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 22 June</strong><span class="text-ink/55 text-[12px]">3.5 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 20 July</strong><span class="text-ink/55 text-[12px]">2.5 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 28 September</strong><span class="text-ink/55 text-[12px]">Aligns with Nov semester</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 26 October</strong><span class="text-amber text-[12px]">★ best for Nov semester</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 23 November</strong><span class="text-ink/55 text-[12px]">3–4 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 28 December</strong><span class="text-ink/55 text-[12px]">2–3 month</span></div>
+    </div>
+
+    <div class="mt-auto pt-10 card-dark p-6 flex items-center justify-between gap-6 flex-wrap">
+      <div>
+        <div class="mono text-amber text-[10px] uppercase tracking-widest">Fine print</div>
+        <div class="text-white text-[13px] mt-1">No teaching jobs start in March, April or October — long Thai school breaks.</div>
+      </div>
+      <a href="#s43" class="cta">Apply for your cohort
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>38 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 39. INTAKE DATES — 2027                                                          -->
+<!-- ================================================================================ -->
+<section class="slide" id="s39" data-theme="light" data-title="Intake Dates 2027">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>When You Can Start  ·  2027</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">Looking further out?</h2>
+    <p class="display-italic text-amber text-xl mb-10">Nine cohorts in 2027. Sign-up early to lock your place.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-2 max-w-6xl">
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 29 March</strong><span class="text-ink/55 text-[12px]">Uni Paid Internship start</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 26 April</strong><span class="text-amber text-[12px]">★ best for May semester</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 24 May</strong><span class="text-ink/55 text-[12px]">Summer Undergrad</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 21 June</strong><span class="text-ink/55 text-[12px]">3–3.5 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 19 July</strong><span class="text-ink/55 text-[12px]">2–2.5 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 27 September</strong><span class="text-ink/55 text-[12px]">Uni Paid Internship start</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 25 October</strong><span class="text-amber text-[12px]">★ best for Nov semester</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 22 November</strong><span class="text-ink/55 text-[12px]">3–4 month</span></div>
+      <div class="border-b border-rule py-3 grid grid-cols-[1fr_auto] gap-3"><strong class="text-ink">Mon 27 December</strong><span class="text-ink/55 text-[12px]">2–3 month</span></div>
+    </div>
+
+    <p class="text-ink/55 text-[14px] mt-10">Cohorts are held in arrival order. The earlier you apply, the more flexibility you have on intake and placement preferences.</p>
+  </div>
+  <div class="slide-footer"><span>Part Six  ·  The Numbers</span><span>39 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 40. CHAPTER DIVIDER — PART SEVEN                                                  -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s40" data-theme="dark" data-title="Part Seven Divider">
+  <div class="text-center p-12">
+    <div class="eyebrow text-amber mb-8"><span class="ruleline" style="background:#e8a020;"></span>Part Seven</div>
+    <h2 class="big-num text-white" style="font-size: clamp(120px, 22vw, 280px);">07.</h2>
+    <p class="display text-amber mt-6" style="font-size: clamp(32px, 5vw, 64px);">Your Next Step</p>
+    <p class="mono text-white/55 uppercase text-xs tracking-widest mt-8">From "I think I might" to "I'm doing it"</p>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Seven  ·  Your Next Step</span><span>40 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 41. YOUR JOURNEY                                                                  -->
+<!-- ================================================================================ -->
+<section class="slide" id="s41" data-theme="light" data-title="Your Journey">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col">
+    <div class="eyebrow mb-4"><span class="ruleline"></span>Your Journey</div>
+    <h2 class="display text-ink mb-2" style="font-size: clamp(40px, 5vw, 68px);">Apply on a Tuesday.<br/><span class="text-amber">Teach by the spring.</span></h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-5 mt-12 flex-1">
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 01</div><h4 class="display text-ink text-base mb-1">Apply</h4><p class="text-[12px] text-ink/55">5 minutes. Free. No commitment.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 02</div><h4 class="display text-ink text-base mb-1">We chat</h4><p class="text-[12px] text-ink/55">A real call with Mike or the team.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 03</div><h4 class="display text-ink text-base mb-1">Get accepted</h4><p class="text-[12px] text-ink/55">We confirm you're a fit.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 04</div><h4 class="display text-ink text-base mb-1">Lock your spot</h4><p class="text-[12px] text-ink/55">Your seat in your chosen cohort.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 05</div><h4 class="display text-ink text-base mb-1">Online TESOL prep</h4><p class="text-[12px] text-ink/55">40 hours of culture and intro TEFL.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 06</div><h4 class="display text-ink text-base mb-1">Fly to Thailand</h4><p class="text-[12px] text-ink/55">We pick you up at the airport.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 07</div><h4 class="display text-ink text-base mb-1">Orientation + TESOL</h4><p class="text-[12px] text-ink/55">Hua Hin. Friends. Food. Your TESOL.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 08</div><h4 class="display text-ink text-base mb-1">Get matched</h4><p class="text-[12px] text-ink/55">Your placement at a partner school.</p></div>
+      <div class="border-t-2 border-rule pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 09</div><h4 class="display text-ink text-base mb-1">Start teaching</h4><p class="text-[12px] text-ink/55">Real classroom. Real paycheck.</p></div>
+      <div class="border-t-2 border-amber pt-3"><div class="mono text-amber text-[10px] uppercase tracking-widest mb-2">Step · 10</div><h4 class="display text-amber text-base mb-1">Lifetime support</h4><p class="text-[12px] text-ink/55">Years on, we've still got your back.</p></div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Part Seven  ·  Your Next Step</span><span>41 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 42. 90 DAYS FROM NOW                                                              -->
+<!-- ================================================================================ -->
+<section class="slide" id="s42" data-theme="light" data-title="90 Days">
+  <div class="p-12 md:p-20 min-h-screen flex flex-col items-center justify-center text-center">
+    <div class="eyebrow mb-6"><span class="ruleline"></span>Ninety Days From Now</div>
+    <h2 class="display text-ink mb-8 max-w-4xl" style="font-size: clamp(40px, 5.5vw, 76px);">In ninety days,<br/>this will <span class="text-amber">already be your life.</span></h2>
+
+    <div class="max-w-3xl space-y-5 text-[15px] text-ink/85 leading-[1.8] text-left">
+      <p><strong class="text-ink">Day 0.</strong> You fill in the application. Five minutes.</p>
+      <p><strong class="text-ink">Day 3.</strong> You're on a call with Mike. You both agree this is a fit.</p>
+      <p><strong class="text-ink">Day 10.</strong> Your spot is locked. Your online TESOL prep has begun.</p>
+      <p><strong class="text-ink">Day 60.</strong> Your visa run is booked. Your friends are confused. Your parents are excited.</p>
+      <p><strong class="text-ink">Day 85.</strong> You land in Bangkok. Someone is at the airport with your name on a card.</p>
+      <p><strong class="text-ink">Day 90.</strong> Your TESOL is done, you have a placement, you're standing in your classroom for the first time. Twenty kids stare at you. One of them says <em class="display-italic text-amber">"Teacher!"</em></p>
+    </div>
+
+    <p class="display-italic text-amber mt-10 text-xl">If you wait another ninety days, you'll be in exactly the same place you are right now.</p>
+  </div>
+  <div class="slide-footer"><span>Part Seven  ·  Your Next Step</span><span>42 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 43. APPLY (CTA)                                                                   -->
+<!-- ================================================================================ -->
+<section class="slide" id="s43" data-theme="dark" data-title="Apply">
+  <div class="absolute inset-0 img-slot img-real" data-slot="43-island-sunset.jpg" data-label="IMAGE: 43-island-sunset.jpg
+Tropical Thai sunset on Koh Samui, calm sea, palm fronds"
+       style="background-image: url('images/43-island-sunset.jpg'); border-radius: 0;"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(18,18,31,0.94) 0%, rgba(26,26,46,0.55) 50%, rgba(26,26,46,0.15) 100%);"></div>
+
+  <div class="relative min-h-screen p-12 md:p-20 text-white flex flex-col">
+    <div class="eyebrow text-amber"><span class="ruleline" style="background:#e8a020;"></span>Your Next Step</div>
+
+    <div class="mt-auto">
+      <h2 class="display text-white" style="font-size: clamp(120px, 20vw, 280px); line-height: 0.85;">Apply.</h2>
+      <p class="display-italic text-amber mt-6" style="font-size: clamp(22px, 2.4vw, 36px);">It takes 5 minutes. It's free.</p>
+      <p class="display-italic text-white" style="font-size: clamp(22px, 2.4vw, 36px);">And it's the start of everything.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+      <div class="md:col-span-7 flex items-center gap-4 flex-wrap">
+        <a href="https://teflheaven.wufoo.com/forms/wfey5l00uk6yk3/" target="_blank" rel="noopener" class="cta">Apply now — 5 minutes
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="mailto:teachabroad@teflheaven.com" class="cta" style="background: transparent; border: 1px solid rgba(255,255,255,0.5); color: white;">Or email Mike directly</a>
+      </div>
+
+      <div class="md:col-span-5 flex md:justify-end">
+        <div class="bg-white p-3" style="border-radius: 8px;">
+          <div class="img-slot img-real" data-slot="43-qr.png" data-label="QR" style="background-image: url('images/43-qr.png'); width: 180px; height: 180px; border-radius: 6px;"></div>
+          <p class="mono text-[9px] uppercase tracking-widest text-ink text-center mt-2">teflheaven.com/apply</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-amber/40 flex flex-wrap justify-between gap-4 items-center">
+      <div>
+        <p class="text-white">teachabroad@teflheaven.com</p>
+        <p class="mono text-[10px] uppercase tracking-widest text-white/70 mt-1">@teflheaven · IG · FB · TikTok  ·  @teflheavenHQ · YouTube</p>
+      </div>
+      <p class="mono text-amber text-[10px] uppercase tracking-widest">Spots held in cohort-arrival order  ·  [ next intake ] filling now</p>
+    </div>
+  </div>
+  <div class="slide-footer on-dark"><span>Part Seven  ·  Your Next Step</span><span>43 / 44</span></div>
+</section>
+
+<!-- ================================================================================ -->
+<!-- 44. BACK COVER                                                                    -->
+<!-- ================================================================================ -->
+<section class="slide chapter-dark" id="s44" data-theme="dark" data-title="Back Cover">
+  <div class="min-h-screen p-12 md:p-20 flex flex-col items-center justify-between text-center">
+    <div class="flex-1 flex items-center">
+      <img src="https://www.teflheaven.com/images/logo.webp" alt="TEFL Heaven" class="h-16 brightness-0 invert" onerror="this.style.display='none';" />
+    </div>
+
+    <div class="flex-1 flex flex-col items-center justify-center">
+      <p class="display-italic text-amber" style="font-size: clamp(40px, 5.5vw, 84px);">See you in Thailand.</p>
+      <div class="h-px bg-amber w-32 my-10"></div>
+      <p class="mono text-white/70 text-[10px] uppercase tracking-widest mb-6">TQUK   ·   Trinity College London-tier   ·   Ofqual-regulated   ·   Est. 2007</p>
+      <p class="text-white text-sm">Union House, 111 New Union Street, Coventry, CV1 2NT, England</p>
+      <p class="text-white text-sm mt-1">teachabroad@teflheaven.com  ·  teflheaven.com</p>
+
+      <div class="mt-12">
+        <p class="display-italic text-amber text-xl">"Feel the fear and do it anyway."</p>
+        <p class="mono text-white/55 text-[10px] uppercase tracking-widest mt-3">— Mike Maitland</p>
+      </div>
+    </div>
+
+    <div class="w-full flex justify-between mono text-[10px] uppercase tracking-widest text-white/55">
+      <span>TEFL Heaven  ·  Teach Thailand  ·  N° 01</span>
+      <span>Back Cover  ·  44 / 44</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+// Build dot nav + counter from document order
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const nav = document.getElementById('dotNav');
+  const counter = document.getElementById('slideCounter');
+  const meta = document.getElementById('topMeta');
+  const total = slides.length;
+
+  slides.forEach((s, i) => {
+    s.dataset.order = i + 1;
+    const a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.className = 'dot';
+    a.dataset.i = i + 1;
+    a.title = s.dataset.title || ('Slide ' + (i+1));
+    nav.appendChild(a);
+  });
+
+  const dots = document.querySelectorAll('.dot');
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio > 0.5) {
+        const idx = parseInt(e.target.dataset.order);
+        dots.forEach(d => d.classList.toggle('active', parseInt(d.dataset.i) === idx));
+        counter.textContent = String(idx).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+        const dark = e.target.dataset.theme === 'dark';
+        dots.forEach(d => d.classList.toggle('on-dark', dark));
+        meta.classList.toggle('on-dark', dark);
+      }
+    });
+  }, { threshold: [0.5, 0.6] });
+  slides.forEach(s => obs.observe(s));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (ev) => {
+    const cur = document.querySelector('.dot.active');
+    if (!cur) return;
+    const i = parseInt(cur.dataset.i);
+    if (ev.key === 'ArrowDown' || ev.key === 'PageDown' || ev.key === ' ' || ev.key === 'ArrowRight') {
+      ev.preventDefault();
+      if (i < total) document.getElementById('s' + String(i+1).padStart(2,'0')).scrollIntoView({behavior:'smooth'});
+    } else if (ev.key === 'ArrowUp' || ev.key === 'PageUp' || ev.key === 'ArrowLeft') {
+      ev.preventDefault();
+      if (i > 1) document.getElementById('s' + String(i-1).padStart(2,'0')).scrollIntoView({behavior:'smooth'});
+    }
+  });
+})();
+
+// Hide placeholder pattern if the image actually loaded
+(function(){
+  document.querySelectorAll('.img-slot[style*="background-image"]').forEach(el => {
+    const m = el.style.backgroundImage.match(/url\((['"]?)(.+?)\1\)/);
+    if (!m) return;
+    const url = m[2];
+    const img = new Image();
+    img.onload = () => { el.dataset.img = '1'; };
+    img.onerror = () => { /* leave placeholder showing */ };
+    img.src = url;
+  });
+})();
+</script>
+
+</body>
+</html>
